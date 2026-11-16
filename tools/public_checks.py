@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 sys.path.insert(0, str(ROOT / 'tools'))
-from export_source import export_source, verify_export
+from export_source import audit_source_coverage, export_source, verify_export
 
 
 def main():
@@ -16,6 +16,7 @@ def main():
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     if not result.wasSuccessful() or result.testsRun == 0:
         return 1
+    print('Source coverage:', audit_source_coverage(ROOT), flush=True)
     with tempfile.TemporaryDirectory(prefix='pokedesk-public-') as temporary:
         folder = Path(temporary) / 'source'
         export_source(ROOT, folder)

@@ -61,3 +61,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# Legacy private playthrough notes (not application source).
+/ITEM_DELIVERY.md
+/work/

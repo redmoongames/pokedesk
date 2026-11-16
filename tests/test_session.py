@@ -198,24 +198,37 @@ class SessionTests(unittest.TestCase):
     def test_autosave_survives_force_kill_without_shutdown_handler(self):
         checkpoint = self.root / "Data/FireRed.state"
         before = checkpoint.stat().st_mtime_ns
-        process = subprocess.Popen([str(ROOT / "Run.command"), "--watch", "--root", str(self.root)],
-                                   stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
-        try:
-            deadline = time.monotonic() + 12
-            while checkpoint.stat().st_mtime_ns == before and time.monotonic() < deadline:
+        with tempfile.TemporaryFile() as output, tempfile.TemporaryFile() as errors:
+            process = subprocess.Popen([str(ROOT / "Run.command"), "--watch", "--root", str(self.root)],
+                                       stdout=output, stderr=errors)
+            def check_alive():
                 if process.poll() is not None:
-                    self.fail(process.stderr.read().decode())
-                time.sleep(0.03)
-            self.assertNotEqual(checkpoint.stat().st_mtime_ns, before, "5-second autosave did not run")
-            process.kill()  # SIGKILL cannot run finally/close handlers.
-            process.wait(timeout=5)
-            with Game(self.root) as restored:
-                self.assertGreater(restored.frame, 120)
-                self.assertIsNone(restored.recovered_from)
-        finally:
-            if process.poll() is None:
-                process.kill()
-            process.communicate(timeout=5)
+                    errors.seek(0)
+                    self.fail(errors.read().decode())
+            try:
+                # A cold launch prepares and verifies the pinned installation
+                # before --watch prints its first snapshot. Do not charge that
+                # startup work to the five-second gameplay autosave interval.
+                deadline = time.monotonic() + 60
+                while not os.fstat(output.fileno()).st_size and time.monotonic() < deadline:
+                    check_alive()
+                    time.sleep(0.03)
+                self.assertGreater(os.fstat(output.fileno()).st_size, 0, "Session startup did not finish")
+                deadline = time.monotonic() + 8
+                while checkpoint.stat().st_mtime_ns == before and time.monotonic() < deadline:
+                    check_alive()
+                    time.sleep(0.03)
+                self.assertNotEqual(checkpoint.stat().st_mtime_ns, before,
+                                    "Autosave did not publish within 8 seconds after session readiness")
+                process.kill()  # SIGKILL cannot run finally/close handlers.
+                process.wait(timeout=5)
+                with Game(self.root) as restored:
+                    self.assertGreater(restored.frame, 120)
+                    self.assertIsNone(restored.recovered_from)
+            finally:
+                if process.poll() is None:
+                    process.kill()
+                process.communicate(timeout=5)
 
     def test_bot_subprocess_controls_this_exact_emulator_instance(self):
         from pokemon_red.automation import Automation

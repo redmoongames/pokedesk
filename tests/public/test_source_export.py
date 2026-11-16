@@ -47,6 +47,34 @@ class SourceExportTests(unittest.TestCase):
         with self.assertRaises(exporter.ExportError):self.export()
         self.assertEqual(sentinel.read_text(), 'keep')
 
+    def test_source_coverage_rejects_unpublished_runtime_and_developer_code(self):
+        for name in ('src/pokemon_red/new_feature.py', 'tools/new_benchmark.py',
+                     'native/new_adapter.c', 'tests/test_new_boundary.py', 'Run.command'):
+            with self.subTest(name=name):
+                path = self.write(name, b'# source\n')
+                with self.assertRaisesRegex(exporter.ExportError, 'missing from distribution policy'):
+                    exporter.audit_source_coverage(self.project)
+                path.unlink()
+
+    def test_source_coverage_accepts_reviewed_code_and_ignores_private_fixtures(self):
+        self.write('tools/new_benchmark.py', b'# source\n')
+        self.policy['trees'].append(dict(path='tools', pattern='*.py'))
+        self.save_policy()
+        for name in ('Data/private.py', 'runtime/private.py', 'tests/fixtures/private.py'):
+            self.write(name, b'# private fixture\n')
+        self.assertTrue(exporter.audit_source_coverage(self.project)['verified'])
+
+    def test_export_uses_one_readme_without_a_staging_copy(self):
+        self.policy['files'].remove('README.github.md')
+        self.policy['files'].append('README.md')
+        self.policy['rename'] = {}
+        (self.project / 'README.github.md').unlink()
+        self.write('README.md', b'One canonical project\n')
+        self.save_policy()
+        self.export()
+        self.assertTrue(exporter.verify_export(self.output)['verified'])
+        self.assertFalse((self.output / 'README.github.md').exists())
+
     def test_export_cannot_write_inside_working_installation(self):
         with self.assertRaises(exporter.ExportError):exporter.export_source(self.project, self.project / 'Data/export')
 

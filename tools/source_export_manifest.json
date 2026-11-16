@@ -8,7 +8,6 @@
     "THIRD_PARTY_NOTICES.md",
     "pyproject.toml",
     "MANIFEST.in",
-    "README.github.md",
     "CONTRIBUTING.md",
     "AGENTS.md",
     "main.py",
@@ -19,11 +18,7 @@
     "docs/screenshots/party.png",
     "docs/screenshots/training.png",
     "docs/screenshots/encounters.png",
-    "tools/export_source.py",
     "tools/source_export_manifest.json",
-    "tools/public_checks.py",
-    "tools/check.py",
-    "tools/check_localization.py",
     "native/bridge.c",
     "native/link.c",
     "native/playback.m",
@@ -35,13 +30,8 @@
     "licenses/mgba-MPL-2.0.txt",
     "licenses/pokebot-GPL-3.0.txt",
     "licenses/pokeapi.txt",
-    "tools/benchmark_analytics.py",
-    "tools/build_reference.py",
-    "tools/benchmark_reference.py",
-    "tools/benchmark_installations.py",
     "desktop_main.py",
     "native/app_launcher.m",
-    "tools/build_macos.py",
     "src/pokemon_red/release_data/dex_availability.json",
     "src/pokemon_red/release_data/effect_names.json",
     "src/pokemon_red/release_data/grind_zones.json",
@@ -54,10 +44,14 @@
     "src/pokemon_red/release_data/region_map.json",
     "src/pokemon_red/release_data/world_topology.json",
     "src/pokemon_red/release_data/PROVENANCE.txt",
-    "tools/prepare_macos_dependencies.py",
-    "tools/check_macos_release.py",
     "docs/RELEASE_VALIDATION.md",
-    "docs/screenshots/game.png"
+    "docs/screenshots/game.png",
+    "README.md",
+    "Run.command",
+    "Check.command",
+    "show_stats.py",
+    "tools/design/build_brand_icon.swift",
+    "tools/design/README.txt"
   ],
   "trees": [
     {
@@ -79,9 +73,11 @@
     {
       "path": "Bots",
       "pattern": "*.py"
+    },
+    {
+      "path": "tools",
+      "pattern": "*.py"
     }
   ],
-  "rename": {
-    "README.github.md": "README.md"
-  }
+  "rename": {}
 }

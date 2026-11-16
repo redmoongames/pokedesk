@@ -4,6 +4,18 @@ Start with Python 3.12/3.13 and `python3 -B tools/public_checks.py`. This public
 gate uses synthetic data and requires no ROM, Tk window, native core or profile.
 It reports its limited scope. Do not treat a source-check pass as a game pass.
 
+## One checkout
+
+The Git repository is the working project. Develop, test and push from that same
+folder. Do not keep another manually synchronized public-source folder. Private
+ROMs, profiles, saves, generated packs and fixture banks may coexist in ignored
+folders; they never belong in commits or release assets.
+
+`README.md` is the single player/developer entry point. Packaging exports are
+disposable artifacts. `tools/public_checks.py` audits source coverage so a new
+module, test, benchmark or launcher cannot silently be omitted from publication.
+Review the diff and stage explicit source paths before pushing.
+
 ## Runtime and safety changes
 
 Read [AGENTS.md](AGENTS.md) and [architecture](docs/architecture.md) first.
@@ -22,8 +34,11 @@ They let a contributor test a built app using their own supported ROM and save,
 without redistributing either. The full historical integration suite additionally
 requires locally prepared multi-edition fixtures; on a fixture-equipped checkout
 run `python3 -B -m unittest discover -s tests`. Missing fixtures are not passes.
-Legacy `Run.command`/`Check.command` launchers belong to prepared private layouts,
-not to the Finder app's player installation instructions.
+`Run.command`/`Check.command` are included for existing prepared portable layouts;
+use the Finder app or the documented build process for a clean installation.
+Native benchmarks and reference compilers are included under `tools/`; some need
+locally prepared ROMs, fixture banks or upstream data. Their inclusion does not
+mean every adapter has a supported binary release.
 
 ## Releases and user data
 

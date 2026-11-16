@@ -131,6 +131,31 @@ def inventory(files):
             for name, data in sorted(files.items())]
 
 
+def audit_source_coverage(project):
+    """Fail if application, test or developer code is absent from the public policy.
+
+    A working checkout may contain private profiles/resources. Only code roots
+    are inspected here; ROMs, saves, generated packs and fixtures stay private.
+    This is a developer/CI check, never a per-frame or startup runtime service.
+    """
+    project = Path(project).resolve()
+    included = set(selection(project))
+    suffixes = {'.py', '.c', '.h', '.m', '.swift'}
+    code = {p.name for p in project.iterdir()
+            if p.is_file() and p.suffix in {'.py', '.command'}}
+    for directory in ('src/pokemon_red', 'native', 'tools', 'Bots', 'tests'):
+        for path in (project / directory).rglob('*'):
+            relative = path.relative_to(project)
+            if '__pycache__' in relative.parts or relative.parts[:2] == ('tests', 'fixtures'):
+                continue
+            if path.is_file() and path.suffix in suffixes:
+                code.add(relative.as_posix())
+    missing = sorted(code - included)
+    if missing:
+        raise ExportError('Source code missing from distribution policy: ' + ', '.join(missing))
+    return dict(source_files=len(code), verified=True)
+
+
 def export_source(project, output):
     project = Path(project).resolve()
     output = Path(output).absolute()
@@ -167,7 +192,7 @@ def verify_export(folder):
     if len(listed) != len(set(listed)):
         raise ExportError('Duplicate export inventory entry')
     expected = selection(folder)
-    # Public README is intentionally generated from the reviewed source README.
+    # The inventory must describe the exact reviewed source selection.
     if set(listed) != set(expected) or inventory(expected) != manifest['files']:
         raise ExportError('Export inventory, policy or source hashes do not match')
     actual = set()

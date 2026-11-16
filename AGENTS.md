@@ -99,3 +99,15 @@
 - Direct embedding must bootstrap into a pinned installation to guarantee safe
   host lazy imports across source updates. Bot scripts are trusted code, not a
   sandbox; captured local Python helpers do not freeze arbitrary external paths.
+
+# One canonical repository
+
+- Develop, test and publish from the same Git checkout. Do not maintain a sibling
+  public-source working copy or copy fixes between separate project folders.
+- ROMs, profiles, saves, generated packs and fixture banks remain local and
+  ignored. Stage only reviewed source paths; never add private data with force.
+- Packaging exports are disposable build artifacts, never another source of
+  truth. Keep README.md authoritative for both the checkout and distribution.
+- Run tools/public_checks.py before publication. Its source-coverage audit must
+  include every application, test and developer source file in the allowlist.
+  Inspect staged names and verify package contents before pushing.

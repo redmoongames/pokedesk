@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pokedesk"
 version = "0.1.0b1"
 description = "Pokémon FireRed for Apple Silicon Macs with guarded automation"
-readme = "README.github.md"
+readme = "README.md"
 requires-python = ">=3.12"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "licenses/*.txt"]

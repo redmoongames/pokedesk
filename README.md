@@ -154,3 +154,16 @@ separate mGBA, symbol-reference and runtime licenses. Corresponding mGBA source
 and runtime notices accompany the release. Game ROMs, data, artwork and trademarks
 are not licensed by this project. PokéDesk is independent and unaffiliated with
 Nintendo, Game Freak or The Pokémon Company.
+
+## Source repository
+
+This repository contains the application implementation, automation scripts,
+native adapter/launcher sources, tests, reference compilers, benchmarks and Mac
+packaging tools. Development and publication use this same checkout. Generated
+source exports are build artifacts, not a separate working project.
+
+A prepared local checkout may also contain ignored ROMs, saves, profiles, runtime
+binaries and reference packs. These private inputs are not part of Git history.
+For a clean installation use the DMG above; for source builds and the distinction
+between public checks and fixture-dependent integration tests, see
+[SOURCE_SETUP.md](docs/SOURCE_SETUP.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
