@@ -1,0 +1,62 @@
+# Local playthroughs and installed application (never source-control user data).
+/Data/
+/Profiles/
+/Sessions/
+/ROMs/
+/templates/
+/checkpoints/
+/runtime/
+/Pokemon.app/
+/assets/
+/outputs/
+/dist/
+/build/
+/.venv/
+
+# Resource packs require a separate provenance review before distribution.
+/vendor/
+/src/pokemon_red/locales/entities.json
+/src/pokemon_red/locales/entities-provenance.json
+/tests/fixtures/
+
+# Historical local reports can contain personal paths and gameplay details.
+/docs/*
+!/docs/SOURCE_SETUP.md
+!/docs/architecture.md
+!/docs/README.ru.md
+!/docs/screenshots/
+!/docs/screenshots/*.png
+
+# Native binaries are built/imported locally; sources remain tracked.
+*.dylib
+*.so
+*.dll
+*.o
+*.a
+
+# Defence in depth: applies even if a save/ROM is put in the wrong directory.
+*.gba
+*.gb
+*.gbc
+*.sav
+*.srm
+*.state
+*.state.*
+*.ss[0-9]
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+.env
+.env.*
+*.pem
+*.key
+*.log
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.pokedesk-paths.json
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

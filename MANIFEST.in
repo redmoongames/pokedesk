@@ -1,0 +1,34 @@
+# Only the deliberately sanitised export is a supported input to sdist builds.
+include LICENSE NOTICE THIRD_PARTY_NOTICES.md README.github.md CONTRIBUTING.md
+include pyproject.toml AGENTS.md .gitignore .gitattributes main.py
+include docs/SOURCE_SETUP.md docs/architecture.md
+include docs/README.ru.md
+include docs/screenshots/party.png docs/screenshots/training.png docs/screenshots/encounters.png
+include tools/export_source.py tools/source_export_manifest.json tools/public_checks.py
+include tools/check.py tools/check_localization.py
+recursive-include tools/regression *.py
+include native/bridge.c native/link.c native/playback.m native/launcher.c native/build.py
+include src/pokemon_red/*.py
+include src/pokemon_red/locales/en.json src/pokemon_red/locales/ru.json src/pokemon_red/locales/manifest.json
+include tests/test_*.py
+recursive-include tests/public *.py
+include Bots/*.py
+global-exclude *.pyc *.gba *.gb *.gbc *.sav *.srm *.state *.sqlite* *.dylib *.so *.dll .DS_Store
+prune Data
+prune Profiles
+prune Sessions
+prune ROMs
+prune templates
+prune runtime
+prune assets
+prune vendor
+prune tests/fixtures
+
+include .github/workflows/ci.yml
+include licenses/*.txt
+
+include tools/benchmark_analytics.py
+
+include tools/build_reference.py
+include tools/benchmark_reference.py
+include tools/benchmark_installations.py

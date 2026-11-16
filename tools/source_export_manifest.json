@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "files": [
+    ".gitignore",
+    ".gitattributes",
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES.md",
+    "pyproject.toml",
+    "MANIFEST.in",
+    "README.github.md",
+    "CONTRIBUTING.md",
+    "AGENTS.md",
+    "main.py",
+    ".github/workflows/ci.yml",
+    "docs/SOURCE_SETUP.md",
+    "docs/architecture.md",
+    "docs/README.ru.md",
+    "docs/screenshots/party.png",
+    "docs/screenshots/training.png",
+    "docs/screenshots/encounters.png",
+    "tools/export_source.py",
+    "tools/source_export_manifest.json",
+    "tools/public_checks.py",
+    "tools/check.py",
+    "tools/check_localization.py",
+    "native/bridge.c",
+    "native/link.c",
+    "native/playback.m",
+    "native/launcher.c",
+    "native/build.py",
+    "src/pokemon_red/locales/en.json",
+    "src/pokemon_red/locales/ru.json",
+    "src/pokemon_red/locales/manifest.json",
+    "licenses/mgba-MPL-2.0.txt",
+    "licenses/pokebot-GPL-3.0.txt",
+    "licenses/pokeapi.txt",
+    "tools/benchmark_analytics.py",
+    "tools/build_reference.py",
+    "tools/benchmark_reference.py",
+    "tools/benchmark_installations.py"
+  ],
+  "trees": [
+    {
+      "path": "src/pokemon_red",
+      "pattern": "*.py"
+    },
+    {
+      "path": "tests",
+      "pattern": "test_*.py"
+    },
+    {
+      "path": "tests/public",
+      "pattern": "*.py"
+    },
+    {
+      "path": "tools/regression",
+      "pattern": "*.py"
+    },
+    {
+      "path": "Bots",
+      "pattern": "*.py"
+    }
+  ],
+  "rename": {
+    "README.github.md": "README.md"
+  }
+}

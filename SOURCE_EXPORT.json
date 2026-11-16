@@ -1,0 +1,1830 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 124,
+      "sha256": "7f7f837c5fb9bd19dfd0a9aa720d998c8f7488fd8e5031fb8772b3a86db93f25"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1377,
+      "sha256": "78a72310791c5f16e6089ff2d4551c6575611ef251ea169b237ac16c1edef5a9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1003,
+      "sha256": "a8fba8d30f7e787bc5edac72cd2224e849517273014619eaf56d34f0e2cf6c3c"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 6999,
+      "sha256": "72a2911cb159a3aba1f0cb4d3c144789d291fd3aba6327606e6e495463bbfac2"
+    },
+    {
+      "path": "Bots/auto_battle.py",
+      "bytes": 121,
+      "sha256": "2966528bfd68231555868b934d7b0b0cf6b669ae3944b3d67ecca344197198d8"
+    },
+    {
+      "path": "Bots/change_party.py",
+      "bytes": 45,
+      "sha256": "91f92ac55cb02cd588c4def322d76f40a569cc8a3d655ac56501d318e20c62a2"
+    },
+    {
+      "path": "Bots/observe.py",
+      "bytes": 727,
+      "sha256": "49bd7ffe2a3e38c2d5bd7d25ace2ffd97f0c5a220f6c8e8e9bb4010bbe4781c4"
+    },
+    {
+      "path": "Bots/press_a_once.py",
+      "bytes": 385,
+      "sha256": "e6386dfe48c3fce34472c2b12783fd78ae1f859900a8efee93d8fc5d1f52f454"
+    },
+    {
+      "path": "Bots/route1_xp.py",
+      "bytes": 160,
+      "sha256": "a2621924e192fdf0c925bef2230ceea18925fa996c33f32aa7b9901a57bda05a"
+    },
+    {
+      "path": "Bots/train_xp.py",
+      "bytes": 171,
+      "sha256": "4c8da0b055f4a855f59acb0fc66d6dc89b88deade2295ec9126312a897aeccbc"
+    },
+    {
+      "path": "Bots/travel.py",
+      "bytes": 72,
+      "sha256": "67e226228059cdf728d62b9cd4ba8ffcbbf40df1849b980858bae1215913fffc"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2056,
+      "sha256": "117147cfa53255a94ec002f7f6384bcce3957a77b85e8c40bc17ae85c0ed9a55"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 1317,
+      "sha256": "f85a9aa2d5a5e59130e6091d95a2466726dbd3e38d6c9809e45eab093e932668"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 432,
+      "sha256": "06973634dc1008114fb0fda4f5cc407da164e2892dd68a4bd0bc1bb3d3b5eb5a"
+    },
+    {
+      "path": "README.github.md",
+      "bytes": 7585,
+      "sha256": "00830adb97643a724657f92a499620c43013b12904f9b157c217f157ccd7383f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7585,
+      "sha256": "00830adb97643a724657f92a499620c43013b12904f9b157c217f157ccd7383f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2492,
+      "sha256": "8b34ea6663d590cfeb56df6991841ade14731e672c0a86b141d2686a080ad837"
+    },
+    {
+      "path": "docs/README.ru.md",
+      "bytes": 7499,
+      "sha256": "60877ff516a1b017d5272a21cc5ecffd373ffd27dbb4dd0759d9b147c80b65a0"
+    },
+    {
+      "path": "docs/SOURCE_SETUP.md",
+      "bytes": 7578,
+      "sha256": "1213687df0be62753f97730fba7978c3b3beae5d76a9a047bc5a173e70feb3dc"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 8057,
+      "sha256": "7c0fe67ea01ff32d6212beddb621d0d41f0996f3e0861656704bb87539f5b6ed"
+    },
+    {
+      "path": "docs/screenshots/encounters.png",
+      "bytes": 400386,
+      "sha256": "f470a60135993ab26e1fec72602b26b4a78acd6577618985ff3b18e03e31ab26"
+    },
+    {
+      "path": "docs/screenshots/party.png",
+      "bytes": 544902,
+      "sha256": "020d2ac1972109cacaa8e767d0e7c3b49801d4cfb67b0aa77b4775bb67fe8361"
+    },
+    {
+      "path": "docs/screenshots/training.png",
+      "bytes": 579885,
+      "sha256": "efc01d401af4449ec7128ee16cdbee537567a436c948faafc50be791fd6c53f6"
+    },
+    {
+      "path": "licenses/mgba-MPL-2.0.txt",
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "licenses/pokeapi.txt",
+      "bytes": 1621,
+      "sha256": "1c04595dc662981c20956ae4251dfa7b62b475c345eddf98bc9b904cb2373f2c"
+    },
+    {
+      "path": "licenses/pokebot-GPL-3.0.txt",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "main.py",
+      "bytes": 300,
+      "sha256": "fe147b2bae23ee135b47dffd439c97c02f625800a8460d0844d4b86fc627791b"
+    },
+    {
+      "path": "native/bridge.c",
+      "bytes": 6875,
+      "sha256": "75a0ec0242941f015f358ba5ad00e9181fcb31a00b0c451e05415946c3ec9f5d"
+    },
+    {
+      "path": "native/build.py",
+      "bytes": 4124,
+      "sha256": "f5cfac6c495e0c2b62f43cd1c082bd936e8d550f2a69ea541af1225f8bb83825"
+    },
+    {
+      "path": "native/launcher.c",
+      "bytes": 1190,
+      "sha256": "0e8ea9251a67948be4b60f651f4e688d933a9ca08c339f49ae5c3293403b12b0"
+    },
+    {
+      "path": "native/link.c",
+      "bytes": 4021,
+      "sha256": "be1a8e491113a59c79b862b023572b14b70b799fb284d2162c17140884fd4e36"
+    },
+    {
+      "path": "native/playback.m",
+      "bytes": 5649,
+      "sha256": "aec7ff05f6b23890f35ff3dd1865f691d356c14f3c4c8618da4a819642544c78"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 856,
+      "sha256": "9a7a4a72d38c12e9b0622927129a0bccc87ded30160997f07b61b836124d62a4"
+    },
+    {
+      "path": "src/pokemon_red/__init__.py",
+      "bytes": 245,
+      "sha256": "5d4963d545f1e57b7cc2b2695f70d08bc39cb3dbafe435566242fc45b4e7afd4"
+    },
+    {
+      "path": "src/pokemon_red/acquisition.py",
+      "bytes": 10275,
+      "sha256": "15e55b245a375b230f35c3a02e22a7e24d1da1128ba6f30ac7c298465a696ba7"
+    },
+    {
+      "path": "src/pokemon_red/acquisition_play.py",
+      "bytes": 18567,
+      "sha256": "01f9a23ba152ed6f18c9bc333d9fc33031fad861765441eabaa83c9e21725bbb"
+    },
+    {
+      "path": "src/pokemon_red/acquisition_view.py",
+      "bytes": 22725,
+      "sha256": "0bccbe4bcde8e7462fb3c1bae0930049b5ac6459d50ad98b09f0ca403f5b509f"
+    },
+    {
+      "path": "src/pokemon_red/acquisition_worker.py",
+      "bytes": 19247,
+      "sha256": "24efff2abf297d6d2c4874f74f03bccaf5368c8613076bb26c8dc1e3c42a459c"
+    },
+    {
+      "path": "src/pokemon_red/ai_overlay.py",
+      "bytes": 3084,
+      "sha256": "5eb2ac66426a93d4815ad3acafe475792316dec9b6394fd2ce49bfe689c91b41"
+    },
+    {
+      "path": "src/pokemon_red/analytics.py",
+      "bytes": 5791,
+      "sha256": "e8630a5e97a199d9d1efe75126a4e8f745b6f90876fcd0943572ee8e06d32aca"
+    },
+    {
+      "path": "src/pokemon_red/analytics_worker.py",
+      "bytes": 1622,
+      "sha256": "5b98572e6466f81978c0877f079276715502383c5da3faa1d6152077f8c6fe7a"
+    },
+    {
+      "path": "src/pokemon_red/audio.py",
+      "bytes": 3330,
+      "sha256": "6883b6f924d3303679b7a2b491ece0329412cc207581f9ba6557784c32654c83"
+    },
+    {
+      "path": "src/pokemon_red/autocatch.py",
+      "bytes": 8617,
+      "sha256": "3227fb3f4deeff901e824fe5a1005f094a3126e1296641ca5510c1639b627b60"
+    },
+    {
+      "path": "src/pokemon_red/automatic_speed.py",
+      "bytes": 7381,
+      "sha256": "26e9f919d3c85d86b95ec66bcf8b049e1197eb3ddfa083541a34a10ab17c99f2"
+    },
+    {
+      "path": "src/pokemon_red/automation.py",
+      "bytes": 31540,
+      "sha256": "606ada812208ba30bd3e19474cf5df1a5bad72211fe8910e8a9863963ee03825"
+    },
+    {
+      "path": "src/pokemon_red/automation_context.py",
+      "bytes": 18551,
+      "sha256": "65f4977b4d2d2d97e155b0cbf11024529e1e8d31e136733e4f2b71f3df51f1d5"
+    },
+    {
+      "path": "src/pokemon_red/automation_windows.py",
+      "bytes": 4057,
+      "sha256": "c29bdd4fbeccddfe6a0fae2eff94a34ce0663d49cac6427de2fe0ff032f1c666"
+    },
+    {
+      "path": "src/pokemon_red/battle_conditions.py",
+      "bytes": 2391,
+      "sha256": "f9f9ec90f7f97db9f0ac23fc397bd34062ef1fe0b463c61577cd34ced466faca"
+    },
+    {
+      "path": "src/pokemon_red/battle_fighter.py",
+      "bytes": 7325,
+      "sha256": "85d59bf39cbeb7928512f9308604b30410d546b30fd71839d29a82c0d46d1cce"
+    },
+    {
+      "path": "src/pokemon_red/battle_flow.py",
+      "bytes": 2243,
+      "sha256": "f9753ac48831d6a70400f388444e13c308a55da975b3d67c47364a1fb0b60b77"
+    },
+    {
+      "path": "src/pokemon_red/battle_panel.py",
+      "bytes": 19707,
+      "sha256": "f3f588bd3ab14a06beb44e67b2749470acdbe35c544d2f20a4c30660b9d568e9"
+    },
+    {
+      "path": "src/pokemon_red/battle_strategy.py",
+      "bytes": 3885,
+      "sha256": "cd33d5d7b19373a038ff3e904e4a282055e029796f1d39317834174c6ae8535d"
+    },
+    {
+      "path": "src/pokemon_red/bot.py",
+      "bytes": 7398,
+      "sha256": "20ac2ae9d6c77e3b7a6d4c776a3707dceb1bff303b2b6ccbf5664fede7a36758"
+    },
+    {
+      "path": "src/pokemon_red/bot_runner.py",
+      "bytes": 1821,
+      "sha256": "6e4b0a4ee61b78d08f3587f320973aa785227f397f1bc59a4ee563ee9f202cb4"
+    },
+    {
+      "path": "src/pokemon_red/capture.py",
+      "bytes": 6677,
+      "sha256": "c70b557c4a70fdf6fb5aebbec5130a550dcc60b535a8d80a27deec460c79a7d6"
+    },
+    {
+      "path": "src/pokemon_red/capture_target.py",
+      "bytes": 7213,
+      "sha256": "9b560f8a5fbd4c69ae273a5fb1a6bb24f4173cc709c0e72a45084dd803c97779"
+    },
+    {
+      "path": "src/pokemon_red/catalog.py",
+      "bytes": 2601,
+      "sha256": "1ba5f6be09d7a460661e9ad9bfbe26890acdf3ee3548c09c371c300dd019a7b1"
+    },
+    {
+      "path": "src/pokemon_red/catch_lifecycle.py",
+      "bytes": 2528,
+      "sha256": "f20e3d46f215174023e50c07baf5acb71c7a2ab77988bdef7ed897aed589e715"
+    },
+    {
+      "path": "src/pokemon_red/catch_preferences.py",
+      "bytes": 2665,
+      "sha256": "09cd4834cb661c1dc3ab62ed937bb459ac52fc676fb484e7c282fb3e3d99dc23"
+    },
+    {
+      "path": "src/pokemon_red/catch_preferences_ui.py",
+      "bytes": 3230,
+      "sha256": "51a1d64af3a60f97b5725537f721781d320ccbd43071dcd59d16e874647f69c5"
+    },
+    {
+      "path": "src/pokemon_red/catch_view.py",
+      "bytes": 24136,
+      "sha256": "ba5c316ff8078df5758cbb9cf41cae53aa2d7d16982f0bf1a6c7c1307acea4d7"
+    },
+    {
+      "path": "src/pokemon_red/cli.py",
+      "bytes": 3025,
+      "sha256": "5789ce2d162cac2d7f662d81ccad4d64a4a542e197f4b6c9b0e54f92e66fa232"
+    },
+    {
+      "path": "src/pokemon_red/collection.py",
+      "bytes": 2622,
+      "sha256": "105c7d9d76dea0be2ee966f703d5f4ed2d02ab40d997f5eefb357101c0933288"
+    },
+    {
+      "path": "src/pokemon_red/collection_view.py",
+      "bytes": 15747,
+      "sha256": "143b9aa93fe34d179c9e957e7c3b5d5da4e7f3296d4ea23bad87357c8015d8df"
+    },
+    {
+      "path": "src/pokemon_red/combat_policy.py",
+      "bytes": 6029,
+      "sha256": "bffad88a3a57cf21b55d7b3fdff856c25b8baa08739911bb5ff26cd43397b99d"
+    },
+    {
+      "path": "src/pokemon_red/coverage.py",
+      "bytes": 15071,
+      "sha256": "2c50f289b761e80b369618f00148547d7dd51cdc83f07368dec0cd754fde4a2d"
+    },
+    {
+      "path": "src/pokemon_red/database.py",
+      "bytes": 2228,
+      "sha256": "be55bcef78f2794fbe631e3ee3e5aa10f1c71c37224f441bd6faaae7c9ee1d5f"
+    },
+    {
+      "path": "src/pokemon_red/design_tokens.py",
+      "bytes": 477,
+      "sha256": "12933019c3ffbedaa799958a999030eb8b7b6f3dae96b8e3b2dab15e1baffe28"
+    },
+    {
+      "path": "src/pokemon_red/dex_reference.py",
+      "bytes": 4304,
+      "sha256": "b1670a9f7b683995bea280b2d514ba19071ad2b036155bdc6c021305fb777fd3"
+    },
+    {
+      "path": "src/pokemon_red/diagnostics.py",
+      "bytes": 1658,
+      "sha256": "c181714e7726e3ae2314fff111b533a205afee40055e0f5b6956a7446d4d9785"
+    },
+    {
+      "path": "src/pokemon_red/editions.py",
+      "bytes": 4197,
+      "sha256": "5936b003a61e62877e6ecb9e276bb29c56e75885eba89d148cce691dcc232611"
+    },
+    {
+      "path": "src/pokemon_red/encounter_capture.py",
+      "bytes": 4882,
+      "sha256": "0f3f0df97ec513dbd741eafe5dea9a93c8841d8061a0acce7c1d9ec878928111"
+    },
+    {
+      "path": "src/pokemon_red/encounter_safety.py",
+      "bytes": 3201,
+      "sha256": "5fb35f57817bfd6101c0bf881d18c4c4c0fc4e106dbea459563a33d80af6d567"
+    },
+    {
+      "path": "src/pokemon_red/encounters.py",
+      "bytes": 491,
+      "sha256": "b3e251962e80a2312aac0d0fb83153383449186b5b9a6f5ce66de2c285eb3d86"
+    },
+    {
+      "path": "src/pokemon_red/engine.py",
+      "bytes": 13782,
+      "sha256": "61d86fc49b45236f581d027bb893b9a6774f0be6ebbb7f8ce29a6f3ceea74a18"
+    },
+    {
+      "path": "src/pokemon_red/engine_runtime.py",
+      "bytes": 21911,
+      "sha256": "8cd0f03635902ec0dbaad6429fc4243feece42def23422c6d7ebbef403e255ab"
+    },
+    {
+      "path": "src/pokemon_red/entity_names.py",
+      "bytes": 4514,
+      "sha256": "76b224a1575509d52d6a965118283c9a96cd81f6fc07d9d9e840a842c72fb20a"
+    },
+    {
+      "path": "src/pokemon_red/event_loop.py",
+      "bytes": 1898,
+      "sha256": "d9ddaad281f1f7b24d546733570bc33e9bc5fae5aaf9696038e9b5533d8c6e60"
+    },
+    {
+      "path": "src/pokemon_red/evolution_reference.py",
+      "bytes": 3654,
+      "sha256": "8722e0d021d404a2e57be71687fb3dcc442d71ebee9490e12a40de67acb62646"
+    },
+    {
+      "path": "src/pokemon_red/experience_ui.py",
+      "bytes": 9462,
+      "sha256": "96b8d41e64504ecc9e6e19787933cc57a00203616b73ac18aedc8193bd39aea4"
+    },
+    {
+      "path": "src/pokemon_red/field_actions.py",
+      "bytes": 5512,
+      "sha256": "18a1fa449dd0f1c83cbfea67bbca306ae8784e035dbccdaa4f06253635d75436"
+    },
+    {
+      "path": "src/pokemon_red/field_encounters.py",
+      "bytes": 957,
+      "sha256": "24793a90afe7e5b9ef9f7fd898ef838a0af907f640fdd42442daa030fe0d32f2"
+    },
+    {
+      "path": "src/pokemon_red/field_encounters_ui.py",
+      "bytes": 6886,
+      "sha256": "6d0f132a171df3a1d1a331b6f28bffafb765f7da0274f4faa016bce78bb73bcd"
+    },
+    {
+      "path": "src/pokemon_red/field_item_menu.py",
+      "bytes": 1969,
+      "sha256": "b3a64561f3a00966086879a65e0b1bf6ce093b0b86abbcf3fb5b41b27c313011"
+    },
+    {
+      "path": "src/pokemon_red/field_recovery.py",
+      "bytes": 3228,
+      "sha256": "d7262a6ec5571756dc0d4d94b64bafc263adee32ca2ed4519e571034acf7a270"
+    },
+    {
+      "path": "src/pokemon_red/field_rules.py",
+      "bytes": 475,
+      "sha256": "fbe47a2147bf991a6383e2765790803cb1879dc23dd500e801ff3877cef3f711"
+    },
+    {
+      "path": "src/pokemon_red/field_teleport.py",
+      "bytes": 11248,
+      "sha256": "f6e7abd3ad60ee090112643bd5d3f40f7faf035ce14b03c4978a17dde80fc376"
+    },
+    {
+      "path": "src/pokemon_red/field_tools.py",
+      "bytes": 4636,
+      "sha256": "c2d95109e4925ceda980f2d4eeec79b44b43e273add9c498913792bd711ab52c"
+    },
+    {
+      "path": "src/pokemon_red/file_writer.py",
+      "bytes": 2906,
+      "sha256": "f295d53dcdc6d94a705bbaf4eccb5fc281833df5a840fcb1e3fda2d18717287c"
+    },
+    {
+      "path": "src/pokemon_red/game_adapters.py",
+      "bytes": 2617,
+      "sha256": "bd33293995fb226fd07b4ae6f3bc62eca6588a2b01b773295077002b3d74a03e"
+    },
+    {
+      "path": "src/pokemon_red/game_layout.py",
+      "bytes": 1254,
+      "sha256": "ee01def1dce67f60f61a8609517ad768d790ab04a2ac661790bc9028b7386928"
+    },
+    {
+      "path": "src/pokemon_red/game_selection.py",
+      "bytes": 9990,
+      "sha256": "db742bd34972a7565eca4f5a8de8a5394d46792656d792b906d464838fd67813"
+    },
+    {
+      "path": "src/pokemon_red/grass_search.py",
+      "bytes": 8962,
+      "sha256": "157c573d62382b4209ecd44dfa10ab084857d27c99f794a339b0b04e7ceb38f2"
+    },
+    {
+      "path": "src/pokemon_red/grind.py",
+      "bytes": 33257,
+      "sha256": "ab3ff9a25b338d9eae56c145159619d032682448924c5d6f07e0c1b37d8d4ffd"
+    },
+    {
+      "path": "src/pokemon_red/gui.py",
+      "bytes": 31778,
+      "sha256": "1b37e5227e7dd1947bde26a1fadf6a23d92b75ab5dc472930ed569ba010601f2"
+    },
+    {
+      "path": "src/pokemon_red/healing.py",
+      "bytes": 2095,
+      "sha256": "2e85e9090240f915b14102723e3ab41ea1dc0fe6aa9ee56b82188ac7f4ead31d"
+    },
+    {
+      "path": "src/pokemon_red/history.py",
+      "bytes": 18739,
+      "sha256": "ba2668620a5525b1a504e446056e40aa5576f3a4c3794b4ea7e19a4c6dbe6340"
+    },
+    {
+      "path": "src/pokemon_red/history_queries.py",
+      "bytes": 5320,
+      "sha256": "3215861f88842ccdb555602249bbd81138aa4d2579bf4f1f74802ba1d61bc4df"
+    },
+    {
+      "path": "src/pokemon_red/hoenn.py",
+      "bytes": 10773,
+      "sha256": "8dde1b91376f221f9025e93000327489019e8a30663194b192a03014c3e831d5"
+    },
+    {
+      "path": "src/pokemon_red/hoenn_acquisition.py",
+      "bytes": 6700,
+      "sha256": "8d638340e8ca359229e34deff2a0007ec6a95f038b67d7ed6c7c1a49bfbf1e3a"
+    },
+    {
+      "path": "src/pokemon_red/hoenn_panel.py",
+      "bytes": 115,
+      "sha256": "58db7b625e1981ad2e27c1585f30b4938ec98bfef52cdb07b97724b39fb787ee"
+    },
+    {
+      "path": "src/pokemon_red/hoenn_session.py",
+      "bytes": 170,
+      "sha256": "a9388bfd2f691754b3bab024a137ff9bc0f4683dac15d84f8d32b443ea2a793b"
+    },
+    {
+      "path": "src/pokemon_red/hotkey_settings.py",
+      "bytes": 7434,
+      "sha256": "76f75ac0c7a759d4cb97621fa2b1a600a01d1a6f21aef083ccfe647855687f0c"
+    },
+    {
+      "path": "src/pokemon_red/hunt_board.py",
+      "bytes": 2933,
+      "sha256": "8cef8f4a2c2609afe9e63f2a33ff2aaac1d341a4207ab7097bd465133e762121"
+    },
+    {
+      "path": "src/pokemon_red/hunt_planning.py",
+      "bytes": 7044,
+      "sha256": "c1cd596efd0f3ec6dc2b6a111c4646bec1ee3fa182a44ad205e8200dadd52fa6"
+    },
+    {
+      "path": "src/pokemon_red/hunt_service.py",
+      "bytes": 260,
+      "sha256": "e4a8e9f9d79e5986d102451cd9c48ddfb79d1895cee1ae8ac4704dbaec75d43b"
+    },
+    {
+      "path": "src/pokemon_red/hunt_spots.py",
+      "bytes": 2072,
+      "sha256": "49ce47905149cdfaafcef44f4da5c82d12efd30851d8df9d989e07505f7b402a"
+    },
+    {
+      "path": "src/pokemon_red/hunt_worker.py",
+      "bytes": 1407,
+      "sha256": "4a7889653e6a8db917fe186be9932b5d1f1d2c232211f64cff2928ce216eb9ab"
+    },
+    {
+      "path": "src/pokemon_red/hunting_template.py",
+      "bytes": 4380,
+      "sha256": "a6e9dcb0c04f58b074df293e658052cc089150222c156397b7910c9217944c4e"
+    },
+    {
+      "path": "src/pokemon_red/i18n.py",
+      "bytes": 14459,
+      "sha256": "ddf283bfb65b6eab589c5f120c47f41a9ebf5f7b0c29b1986626cf6dbf8a8005"
+    },
+    {
+      "path": "src/pokemon_red/installation_versions.py",
+      "bytes": 15562,
+      "sha256": "56f6316702ecab1a27050acf357a6b121efcec83cac319c10d3695fdf9905273"
+    },
+    {
+      "path": "src/pokemon_red/inventory_library.py",
+      "bytes": 1271,
+      "sha256": "e913a2b983063c94f36ec58daff1a1dc6db963087b5c262d5db73fc32029c181"
+    },
+    {
+      "path": "src/pokemon_red/inventory_view.py",
+      "bytes": 23505,
+      "sha256": "cae98edb129e2afb16a5a75b7727a9e311cd1a1dd749625deae02f36cdd67629"
+    },
+    {
+      "path": "src/pokemon_red/item_catalog.py",
+      "bytes": 3204,
+      "sha256": "6f1bce2bf3eeb0ae9179b09ff9be8d8dd6e4d2576782e114c66c80c6dae3d379"
+    },
+    {
+      "path": "src/pokemon_red/item_delivery.py",
+      "bytes": 19201,
+      "sha256": "ae67bdb287f53a641da077376276d036822ac74bdfd345266a234fcb0f847bad"
+    },
+    {
+      "path": "src/pokemon_red/item_delivery_worker.py",
+      "bytes": 14534,
+      "sha256": "e1728de7e153d62efbe62696b08373cb35aba97288e2ef1bd1fcf02e20454a31"
+    },
+    {
+      "path": "src/pokemon_red/item_source_worker.py",
+      "bytes": 4842,
+      "sha256": "97492ea4371a96a075e7d81abfd344d1afa1c0e8cdead162aadf58d5714db695"
+    },
+    {
+      "path": "src/pokemon_red/item_sources.py",
+      "bytes": 5454,
+      "sha256": "55492e18b17e5dcff99a61f38c3c6f258c608e23051a2e3c79d7c4128e3671cd"
+    },
+    {
+      "path": "src/pokemon_red/item_transfer.py",
+      "bytes": 3606,
+      "sha256": "f46ba091e2bad7f0705e87ad55ebe2ec2a78e15a258533726dc3388189755782"
+    },
+    {
+      "path": "src/pokemon_red/iv_preferences.py",
+      "bytes": 1161,
+      "sha256": "29bd004160436167daef4257ab028c14f80d298b666730a7eb33911c28d0321e"
+    },
+    {
+      "path": "src/pokemon_red/iv_preferences_ui.py",
+      "bytes": 2765,
+      "sha256": "eebedc06e3ad3ebee7eba38b95b89746bd413d1921903ba3a8ad554a7e12bd4e"
+    },
+    {
+      "path": "src/pokemon_red/journal_store.py",
+      "bytes": 6016,
+      "sha256": "bd1bfc5368bc75173ef8d3ceb26917e8dce219170973da361d101d0ce09b3161"
+    },
+    {
+      "path": "src/pokemon_red/journey.py",
+      "bytes": 8265,
+      "sha256": "26fa9280b649f4d220c2908b5d7ccab54d7c8a08cbe6b0601db8b288d593e395"
+    },
+    {
+      "path": "src/pokemon_red/keyboard.py",
+      "bytes": 2819,
+      "sha256": "d135136feafc8bcfcb65b5495f85ba5042ce75318850100ae29595b84ac9c157"
+    },
+    {
+      "path": "src/pokemon_red/learning.py",
+      "bytes": 12161,
+      "sha256": "d86290654d1dcc1818f358692aa7407c2e8f2d052de324fd3504979249f6579b"
+    },
+    {
+      "path": "src/pokemon_red/learnset_ui.py",
+      "bytes": 8488,
+      "sha256": "2386d3a436f93aaa5adde5285d400857278257abed51b42671ef36fccd42cb4f"
+    },
+    {
+      "path": "src/pokemon_red/link.py",
+      "bytes": 1564,
+      "sha256": "96d2f330ab1d9126573c510db380664ca6e530b1e850247ec7c5a12231e7ab31"
+    },
+    {
+      "path": "src/pokemon_red/locales/en.json",
+      "bytes": 322025,
+      "sha256": "4cf6c8e168ce4989f85f735b9897c3bd8b93d7b22a0d1367180c188e3b99e044"
+    },
+    {
+      "path": "src/pokemon_red/locales/manifest.json",
+      "bytes": 756699,
+      "sha256": "237f0d7b3e545adbf75e8fbd3bed8b56a1907903961edc53f9b22c28ae0faf65"
+    },
+    {
+      "path": "src/pokemon_red/locales/ru.json",
+      "bytes": 481457,
+      "sha256": "cd04337f5c13d5073cbfae4c93e4fe444dffa2b38513e6400b5abbe826ac2c37"
+    },
+    {
+      "path": "src/pokemon_red/localized_tk.py",
+      "bytes": 9463,
+      "sha256": "51ab96f7964bed08d31e5507f41786a79f04dbdc699b25fe0d2d222a8b8c613e"
+    },
+    {
+      "path": "src/pokemon_red/location_map_ui.py",
+      "bytes": 5793,
+      "sha256": "cd7067d3676fda48f70e8fd87627ed342c508b445f7f174d7aafabc4aa1ad59e"
+    },
+    {
+      "path": "src/pokemon_red/location_reference.py",
+      "bytes": 2582,
+      "sha256": "4c9dcc0e02a1651b1e4763fdaa6119b1896693888d4a04027e6db81c5fac4d6b"
+    },
+    {
+      "path": "src/pokemon_red/location_view.py",
+      "bytes": 21117,
+      "sha256": "d28c4dc128f9f1025fd190e8979f3ac8c6e38df5cb567662cf71a1af8242770f"
+    },
+    {
+      "path": "src/pokemon_red/locations.py",
+      "bytes": 772,
+      "sha256": "d4376b79c16954cc91a5b47198758484a6a3938a043a4cd166d230f30c79c47e"
+    },
+    {
+      "path": "src/pokemon_red/manual_battle.py",
+      "bytes": 6821,
+      "sha256": "e7a6a40eaca7b19ed7b44f7588810cd85773b9f51a4e0f2617938ef5fe48fe7f"
+    },
+    {
+      "path": "src/pokemon_red/map_repository.py",
+      "bytes": 961,
+      "sha256": "8317e29aec595e40751571b7b5299d6aacc4c58176ea02e0f9e0b3140bdbe2b5"
+    },
+    {
+      "path": "src/pokemon_red/mechanics.py",
+      "bytes": 6989,
+      "sha256": "415b10b63ba1baee898a02f488b44dbb226ffb9bdd2faf489385b8216f5ab2cc"
+    },
+    {
+      "path": "src/pokemon_red/models.py",
+      "bytes": 6173,
+      "sha256": "e1f2fa2ae8a0884be66c99927075630043c0329116fc448b610fcb4a47c9027a"
+    },
+    {
+      "path": "src/pokemon_red/move_details_ui.py",
+      "bytes": 7810,
+      "sha256": "7fb7fc7f2f0ba37e0cad3c01c699deb8aa173b997495fb7ec102149f690e61a0"
+    },
+    {
+      "path": "src/pokemon_red/move_plan.py",
+      "bytes": 11598,
+      "sha256": "6956a36de39cf3ef1afebdc7ba804caf932e7fe65e668631e4e6f7495f37bfd3"
+    },
+    {
+      "path": "src/pokemon_red/move_plan_ui.py",
+      "bytes": 12188,
+      "sha256": "1086a929fec87f8bec5a8ccd049fcfeb1acc16fd657c361a6cd48d76d80116ea"
+    },
+    {
+      "path": "src/pokemon_red/move_reference.py",
+      "bytes": 3351,
+      "sha256": "bd7ec88c46496dc2bcf651091b948954baa12fcdf333d876afee01ba97f569af"
+    },
+    {
+      "path": "src/pokemon_red/movement.py",
+      "bytes": 7116,
+      "sha256": "2d393c26fa8cd58b5bfbd719ef9470b2998c2d007dc8b0e794034f8f080d8d08"
+    },
+    {
+      "path": "src/pokemon_red/nature_preferences.py",
+      "bytes": 6424,
+      "sha256": "6a464083b09d57f5907ebd5e549b6c066c7a3aa7a63bc018689cf9a0c832dda9"
+    },
+    {
+      "path": "src/pokemon_red/natures.py",
+      "bytes": 834,
+      "sha256": "64bbef99bba120f30f5d9897271d235cb9b59abd6bde2dbfbc24ab427965f3ca"
+    },
+    {
+      "path": "src/pokemon_red/navigation.py",
+      "bytes": 27999,
+      "sha256": "7851c0da5f49135e8f25b148ef9b9ba6ed630962c1762055012246ff2ffd1c9d"
+    },
+    {
+      "path": "src/pokemon_red/new_game_config.py",
+      "bytes": 3174,
+      "sha256": "a4fd8f6cf162e4dd98d1ed050e473f9f44affbf49f796b586a579eb5699f9821"
+    },
+    {
+      "path": "src/pokemon_red/operation_worker.py",
+      "bytes": 13777,
+      "sha256": "3ad199afe4e1a5694713bc25ec23322b4c5744554d54aee78d8e4e0bfa748d7f"
+    },
+    {
+      "path": "src/pokemon_red/operations.py",
+      "bytes": 32118,
+      "sha256": "d46c75002ccc15ca09d146a36937497849582b3b13b58b3dce8b80e65a24788b"
+    },
+    {
+      "path": "src/pokemon_red/optimizer.py",
+      "bytes": 23824,
+      "sha256": "040d1596ca8c93bd52b395d9dd4952a809120a6a25102f9ffcc75032e63b7879"
+    },
+    {
+      "path": "src/pokemon_red/panel.py",
+      "bytes": 27942,
+      "sha256": "33fbc32bd90307a656d5b98518d39de86b3c331d5a6e817391e58a61d85ff0aa"
+    },
+    {
+      "path": "src/pokemon_red/party_editor.py",
+      "bytes": 12930,
+      "sha256": "8e1317190b7a25ab2c872490771040aa23225a7c9f8cf9946848aaf504cf0732"
+    },
+    {
+      "path": "src/pokemon_red/party_management.py",
+      "bytes": 5693,
+      "sha256": "80f2ef157a46299a932a806eb3b2c38d195dfd56b4fd4da98468d51da5a6b6a5"
+    },
+    {
+      "path": "src/pokemon_red/party_row.py",
+      "bytes": 4476,
+      "sha256": "1d2d498bb3610d1b5d55aa7b6ce8d63ad2463af6b779763cedbb4f7cae6ac952"
+    },
+    {
+      "path": "src/pokemon_red/party_worker.py",
+      "bytes": 1080,
+      "sha256": "9be4a13e595084e7aed75f5146213664d30a60e41c5d996d9fa289f46bc07404"
+    },
+    {
+      "path": "src/pokemon_red/path_cache.py",
+      "bytes": 5067,
+      "sha256": "2a322a586e04a79da53015407212ed599d22ca9e722fe3ab651fc32e220d0a73"
+    },
+    {
+      "path": "src/pokemon_red/paths.py",
+      "bytes": 5803,
+      "sha256": "74067898eed55650005363967c839c0e0867f5b068b1f5c8331572a0ecb23622"
+    },
+    {
+      "path": "src/pokemon_red/persistence.py",
+      "bytes": 3321,
+      "sha256": "058e0ea2340d794264c992f2b8bf4a2ebf37ac80783c3aba0f9ad9bc1d5218f2"
+    },
+    {
+      "path": "src/pokemon_red/planning.py",
+      "bytes": 10213,
+      "sha256": "43ad5a81553e56a25e64caac61231ab5902afc14f495495f0c903272a14240f3"
+    },
+    {
+      "path": "src/pokemon_red/planning_service.py",
+      "bytes": 7219,
+      "sha256": "e208e0f92cf50c8b78645d271dd996fe5c130f3d90228c6fe83556f8ce4e0564"
+    },
+    {
+      "path": "src/pokemon_red/planning_state.py",
+      "bytes": 5479,
+      "sha256": "9fa7c40eb95944f00b1a940f4307ddc5751f6290d15619fd27ff7c40cfcfbc70"
+    },
+    {
+      "path": "src/pokemon_red/planning_worker.py",
+      "bytes": 2131,
+      "sha256": "12399638257e47e6af9e5f71a992c71c307ef6cb723916c78b960e18770bab88"
+    },
+    {
+      "path": "src/pokemon_red/player_inventory.py",
+      "bytes": 1292,
+      "sha256": "635663105cdbc449c5a608848b04dafae0b3d8d47b3cfefe917c24169f19f5b1"
+    },
+    {
+      "path": "src/pokemon_red/pokemon_page.py",
+      "bytes": 17268,
+      "sha256": "579efc720319d6c95c3b76604cad88f4ed954508435fac57326b9481df994005"
+    },
+    {
+      "path": "src/pokemon_red/pokemon_source_ui.py",
+      "bytes": 10823,
+      "sha256": "720e1a004c75c1d6b4beb9b933cb08eefb062fca7191b5aef7ed1b7bb690d346"
+    },
+    {
+      "path": "src/pokemon_red/pokemon_sources.py",
+      "bytes": 9088,
+      "sha256": "bfa14797af939fbdfaa31ae7db1c9c7a5c4d305889c44dbdbd0c25f9a0a81f1f"
+    },
+    {
+      "path": "src/pokemon_red/pokemon_ui.py",
+      "bytes": 12651,
+      "sha256": "646b398c8b372d2c7b42706b43e6e45c52a3c0fefe9e0ee89c11183baac84da7"
+    },
+    {
+      "path": "src/pokemon_red/portal_graph.py",
+      "bytes": 1403,
+      "sha256": "2c20910be06b16c55619e9b053dc6e85e17e14ea6f2ab8412fb90371df4f2fab"
+    },
+    {
+      "path": "src/pokemon_red/prepared_plan.py",
+      "bytes": 4047,
+      "sha256": "4f7d94466d84d39a3967f2cc7e1731a2cb6ebface1c77a48c53b636839fb0a34"
+    },
+    {
+      "path": "src/pokemon_red/presentation.py",
+      "bytes": 1646,
+      "sha256": "895d4d1f112f5b13d8095c81efb14a29d66062ebb6918845a8faac124869c6de"
+    },
+    {
+      "path": "src/pokemon_red/profile_restore.py",
+      "bytes": 2738,
+      "sha256": "ac80640928a3abac92545bba3f4f87c9607ecbf6b7289035d41023c20381288a"
+    },
+    {
+      "path": "src/pokemon_red/profile_trade.py",
+      "bytes": 10294,
+      "sha256": "e7d82cd7cf920fc08ff5d7c078ec2941dcafd3a01351928b49fd19d9ddb25587"
+    },
+    {
+      "path": "src/pokemon_red/profile_trade_ui.py",
+      "bytes": 7630,
+      "sha256": "0b457133e7217b372b2f8bba145118376b44e50358d2ff4b58c56530ff05bdfb"
+    },
+    {
+      "path": "src/pokemon_red/profiles.py",
+      "bytes": 10406,
+      "sha256": "92a6ea9fbbbcd3be9f7f302b61941405feed669ce66ae2db791c8e39dcd8d16a"
+    },
+    {
+      "path": "src/pokemon_red/prologue.py",
+      "bytes": 8564,
+      "sha256": "ed0d0dc4a762416271cabf4030a4895a7742072aad4281656bcde3b70daec271"
+    },
+    {
+      "path": "src/pokemon_red/reference_pack.py",
+      "bytes": 4405,
+      "sha256": "a6bf62c682c39237f4b7720b1fda4da07bcb2a64950b47ab8ca54489b4e0d1c7"
+    },
+    {
+      "path": "src/pokemon_red/reference_ui.py",
+      "bytes": 16771,
+      "sha256": "6ec69aa3d6b5888758f67a0c0f295b8eabc7b9e3965659e09965ffdb714a6d54"
+    },
+    {
+      "path": "src/pokemon_red/region_map.py",
+      "bytes": 2907,
+      "sha256": "293b06b0e8883f8b84dab86847c079426d498c67527399637b0d6028f94ae74b"
+    },
+    {
+      "path": "src/pokemon_red/rom_catalog.py",
+      "bytes": 4254,
+      "sha256": "a31b48788dfe718aee2626656d4c6e58dfe038bb49d35907027a368226207a9e"
+    },
+    {
+      "path": "src/pokemon_red/route_profiles.py",
+      "bytes": 1794,
+      "sha256": "63569183c826a5b012e225fe4e29617f3bf6f4b3199c0bc29e367c233820eed5"
+    },
+    {
+      "path": "src/pokemon_red/route_ui.py",
+      "bytes": 3328,
+      "sha256": "1c2aa83044aface2f4ae6d1e4c5286aa3e45469ee9f1fd217ea2d0d53b78b8a1"
+    },
+    {
+      "path": "src/pokemon_red/rules.py",
+      "bytes": 6619,
+      "sha256": "59c9e679fa107bdea5c0080c5c8e1590c3be24bc28f0dbb612854f6702972276"
+    },
+    {
+      "path": "src/pokemon_red/run_context.py",
+      "bytes": 12455,
+      "sha256": "0bc52ae83174b64d71f355e3398b5daed04e1a374da8a9027c4ab477d81a2a85"
+    },
+    {
+      "path": "src/pokemon_red/runtime_data.py",
+      "bytes": 2694,
+      "sha256": "6caf595aa15f5b07221f6f7d24a99853e0bb25bb8c6ee2a447c27d1378f71327"
+    },
+    {
+      "path": "src/pokemon_red/runtime_views.py",
+      "bytes": 6779,
+      "sha256": "30e44ea76d2f7e04b3c15994657f1439b6577a58398b3c881ba01c58c3cd009f"
+    },
+    {
+      "path": "src/pokemon_red/save_history_ui.py",
+      "bytes": 10566,
+      "sha256": "c57568654c7997a5870205dc49ae265acafa40673f2c0753b8ce273b03ab4942"
+    },
+    {
+      "path": "src/pokemon_red/save_metadata.py",
+      "bytes": 2047,
+      "sha256": "26fc1c54684ed25e5498cf01c8567886fca3672ccf5adfd503432a121d37b401"
+    },
+    {
+      "path": "src/pokemon_red/save_timeline.py",
+      "bytes": 9731,
+      "sha256": "42fa3e0d991ca2153c2e3ec3f6335993bd66d29679d79dad12d4760b12c6c17f"
+    },
+    {
+      "path": "src/pokemon_red/scheduling.py",
+      "bytes": 3687,
+      "sha256": "a3c8e5dcc3601ed5cb2acc1d10337a59a6df1731bd601aca44285d386579fbc7"
+    },
+    {
+      "path": "src/pokemon_red/scrolling.py",
+      "bytes": 11361,
+      "sha256": "db257e611476ae5bce1e7f0aa154046aff695b33f631222768126abf91f00a01"
+    },
+    {
+      "path": "src/pokemon_red/search_budget.py",
+      "bytes": 1201,
+      "sha256": "587b0289f999b6ada368ba5ff975e88c148e1256063399c0c05bd8d79a11401d"
+    },
+    {
+      "path": "src/pokemon_red/search_candidates.py",
+      "bytes": 3925,
+      "sha256": "508d708b4144b506f406594adf2d99d824240400211fad3caf0526e57c2f36c7"
+    },
+    {
+      "path": "src/pokemon_red/search_candidates_ui.py",
+      "bytes": 3996,
+      "sha256": "7d7e86921ecd528d305f91d795e153cf41c10c495f12b7e6f66830dd69aebdf8"
+    },
+    {
+      "path": "src/pokemon_red/search_odds.py",
+      "bytes": 4147,
+      "sha256": "8400cb8f13e6e871e44a457b9f9c213aee4b454d2116954b9c4629d26ced0e53"
+    },
+    {
+      "path": "src/pokemon_red/search_processes.py",
+      "bytes": 666,
+      "sha256": "275a513de2af7b4f4c017b6f1f7bee25a35ca791b27788d5f1291754ba7fd706"
+    },
+    {
+      "path": "src/pokemon_red/search_transport.py",
+      "bytes": 3185,
+      "sha256": "c89724b27473895e5100af7a086e52ee960ff1a9f3a9ea0f7854bbc9d7f0f3e6"
+    },
+    {
+      "path": "src/pokemon_red/session_controller.py",
+      "bytes": 50576,
+      "sha256": "8f45e90d6d1c42093c493a38c3ab258b9288261a7cf09b34b2aae2f3a30d68e8"
+    },
+    {
+      "path": "src/pokemon_red/session_ui.py",
+      "bytes": 4790,
+      "sha256": "c55734a36aa4eb72c3161866635219dd0a72642492ce84fe7976b22e1de52fa2"
+    },
+    {
+      "path": "src/pokemon_red/settings.py",
+      "bytes": 6996,
+      "sha256": "4a863abe6ed77cd21c46307b1369876b933c3b3f072582a64cdb83b7cca47775"
+    },
+    {
+      "path": "src/pokemon_red/slots.py",
+      "bytes": 7040,
+      "sha256": "ab18d8a61fba85a45c889cadbb9ab14a80e9b31d2665165d38909091fd98dbcc"
+    },
+    {
+      "path": "src/pokemon_red/speeds.py",
+      "bytes": 1121,
+      "sha256": "38a8034d3970c49590fe5e7894eba0fc0f5ce88fd2e8d1912741c545e8e1d982"
+    },
+    {
+      "path": "src/pokemon_red/sprites.py",
+      "bytes": 9205,
+      "sha256": "7ac6f6a37bf760cf363db30bb89c03a4e9f255c1b97b6a312b974c2091c04375"
+    },
+    {
+      "path": "src/pokemon_red/starter_candidates.py",
+      "bytes": 1300,
+      "sha256": "7802fc33f8384f1cb657b52e95bf1515ffe44bf4139f18a44711b5e1a50994b5"
+    },
+    {
+      "path": "src/pokemon_red/starter_checkpoint.py",
+      "bytes": 2021,
+      "sha256": "f2526526667e7f10b438ab49062858cd89c46b2db9e5d68122920d49019129d6"
+    },
+    {
+      "path": "src/pokemon_red/starter_search.py",
+      "bytes": 8481,
+      "sha256": "bff25f2026ba16db8aa322bb1402d8f95ee2385e40043e1bd86c09dc317ba978"
+    },
+    {
+      "path": "src/pokemon_red/starter_search_worker.py",
+      "bytes": 5259,
+      "sha256": "933ba7711c171d7abb1d9dd6da4c63027e5552f4746188e65e3e2000a60f29a3"
+    },
+    {
+      "path": "src/pokemon_red/startup.py",
+      "bytes": 23665,
+      "sha256": "2e39085fdf44cb64c8a4b14e198f8d0746e46f9a8d387d75533007bd464e1d97"
+    },
+    {
+      "path": "src/pokemon_red/stat_values_ui.py",
+      "bytes": 4554,
+      "sha256": "a27d96e5428ddfc1eb897b9e6d319e9b45e726f12209c4a31b4ab2b8a38d08a4"
+    },
+    {
+      "path": "src/pokemon_red/statuses.py",
+      "bytes": 4522,
+      "sha256": "3a340771362297a53f40d67c78b110e9a66137f9dde873bd3a3f63545c55fd47"
+    },
+    {
+      "path": "src/pokemon_red/storage.py",
+      "bytes": 10534,
+      "sha256": "748923d0d3359dbf5b907d458a7d53c68221df96bc1aafeedf635ad228b06939"
+    },
+    {
+      "path": "src/pokemon_red/table.py",
+      "bytes": 20708,
+      "sha256": "3ad7d96f5d08c9e875dea42d25136db1e1523d4e3d731207fd3807e648133945"
+    },
+    {
+      "path": "src/pokemon_red/team_view.py",
+      "bytes": 9235,
+      "sha256": "a63af16f0424f4f442ffaec552fa24a5f29ca1a221a4935cef77de2701c53e13"
+    },
+    {
+      "path": "src/pokemon_red/telemetry.py",
+      "bytes": 34433,
+      "sha256": "8231ac197b253d92d92cfa7070bee647882f154aaee44feddfecbdf4c69ca874"
+    },
+    {
+      "path": "src/pokemon_red/text_values.py",
+      "bytes": 5454,
+      "sha256": "7cc4c3683e30364298a52e75055576b2de9461db90707d063c7741bcfe8e6b7a"
+    },
+    {
+      "path": "src/pokemon_red/tooltips.py",
+      "bytes": 2599,
+      "sha256": "c812df0e69b6d3d13d2f55c766c86976f206e323c857676f8a6d4b0e63a86fc7"
+    },
+    {
+      "path": "src/pokemon_red/topology.py",
+      "bytes": 1299,
+      "sha256": "6995c5d983e7b8f0e51de51065c8cf5cbe66ee91865eeb7036a9473940c98cae"
+    },
+    {
+      "path": "src/pokemon_red/trade.py",
+      "bytes": 13158,
+      "sha256": "a2222a37faaafe01bb1197811aa3be32e6d1e09b990273c70b989cf99638948d"
+    },
+    {
+      "path": "src/pokemon_red/trade_adapters.py",
+      "bytes": 1261,
+      "sha256": "c7a533faa88f105da4cf81e85f005f0551eeaa8a38c895cfb34796be7bb21043"
+    },
+    {
+      "path": "src/pokemon_red/trainer_navigation.py",
+      "bytes": 11980,
+      "sha256": "e9f12eede63fb7b99a2ccf503a8a6043f3ec1113ae1c9f246034cc2684d65198"
+    },
+    {
+      "path": "src/pokemon_red/training.py",
+      "bytes": 45622,
+      "sha256": "22c5b0cde9b9af5e0db7bd2e6b34598d141c2452f326e3de27fcc6bc1eab212f"
+    },
+    {
+      "path": "src/pokemon_red/training_item.py",
+      "bytes": 5467,
+      "sha256": "e6c903709ca61978276a16146a4b6217c0449b701e73e47015f42a643dec53e0"
+    },
+    {
+      "path": "src/pokemon_red/training_tactics.py",
+      "bytes": 9617,
+      "sha256": "4e41a8dc09d2ea75d558381fae547ab26335ba80a755a9b1688b562f6dbd268c"
+    },
+    {
+      "path": "src/pokemon_red/training_ui.py",
+      "bytes": 91,
+      "sha256": "36e64fdd58c2cdb21c97f4ca13f1cf4b56b88c778ad51c0a6bdc4dd7e1f4e9e1"
+    },
+    {
+      "path": "src/pokemon_red/training_view.py",
+      "bytes": 39366,
+      "sha256": "fef6daa37d914cba8f90895d03da20ec25e0643f4056d79ce8d7d78f6b64f100"
+    },
+    {
+      "path": "src/pokemon_red/travel.py",
+      "bytes": 11983,
+      "sha256": "b609da538e8c3e063bf0d0d0cb25ff82ec403a9816d8c181c54828b720319082"
+    },
+    {
+      "path": "src/pokemon_red/travel_plan.py",
+      "bytes": 4764,
+      "sha256": "764a141ab799544262c6a5b95f61d5f62b54aedcc7ecd99dc909e8f238c942f5"
+    },
+    {
+      "path": "src/pokemon_red/travel_policy.py",
+      "bytes": 3883,
+      "sha256": "5f8e419c956f440c2bb7536d29b955445ef0258bee4116e1d18f0136c1eecf36"
+    },
+    {
+      "path": "src/pokemon_red/travel_service.py",
+      "bytes": 2838,
+      "sha256": "d681bba627e26216fcbb3ad213528c2e901d08fb548960559208cfae2c470924"
+    },
+    {
+      "path": "src/pokemon_red/travel_worker.py",
+      "bytes": 965,
+      "sha256": "63aea56de5a930f9b4157bb3eda718d620ba515a3dcb889fad77ef6205b32288"
+    },
+    {
+      "path": "src/pokemon_red/types_ui.py",
+      "bytes": 7916,
+      "sha256": "12d250be518bf51b5e607d8b15ff3991c177a132a456c4025e345585f71df733"
+    },
+    {
+      "path": "src/pokemon_red/ui.py",
+      "bytes": 19775,
+      "sha256": "e838b939130c9d4e0caf4f23fa15f313da3aa6643f84f2ac4fdb3981cffa0cf0"
+    },
+    {
+      "path": "src/pokemon_red/walking_route.py",
+      "bytes": 1721,
+      "sha256": "c2d1d0e4b0fb061a1279764019e4379b78efb2fc06d6c85f8bf937bd61ae4b7a"
+    },
+    {
+      "path": "src/pokemon_red/water_hunting.py",
+      "bytes": 10611,
+      "sha256": "6ee3786c2f22e81c35b6d4e66e59327784cd7ae3d7d398287edd598f6d05105d"
+    },
+    {
+      "path": "src/pokemon_red/wild_acquisition.py",
+      "bytes": 4254,
+      "sha256": "cc6e1691c3e2f938b339b762a5d04f9031f73b251ffba3a7a8535700a6997937"
+    },
+    {
+      "path": "src/pokemon_red/wild_capture.py",
+      "bytes": 10140,
+      "sha256": "97f189bfee0ee845a1bf8ed060d300b7c498bc07669d683351d12a5ee9f81a94"
+    },
+    {
+      "path": "src/pokemon_red/wild_history_ui.py",
+      "bytes": 12219,
+      "sha256": "d15bdf56d7d96563acf84675d2edecebe3601a531f5c572e6ce311ba0af86fd0"
+    },
+    {
+      "path": "src/pokemon_red/wild_search.py",
+      "bytes": 13353,
+      "sha256": "51b7bbac9291fb758f664463f16ed752daac04fbc425107034b1f6eeeb2a4594"
+    },
+    {
+      "path": "src/pokemon_red/wild_search_history.py",
+      "bytes": 6887,
+      "sha256": "0976b6b1fed1ca7a99d501e70c2c145cba83461c1a2666cda5601e34dc23c286"
+    },
+    {
+      "path": "src/pokemon_red/wild_search_worker.py",
+      "bytes": 6515,
+      "sha256": "dc3560e34f0ef00fb0db47735bdcad9c4e3c6e1357bdae52f7a2b3c7eda56d35"
+    },
+    {
+      "path": "src/pokemon_red/window_layout.py",
+      "bytes": 3424,
+      "sha256": "2b853107b1f76785008a815dfd2f97eee229de40430b546f4ff074de0189bf9f"
+    },
+    {
+      "path": "src/pokemon_red/worker_pacing.py",
+      "bytes": 1010,
+      "sha256": "e8b8973509f5d651b1a03f35b0bb2ff2af0d0253f4d4b0cec477e70befa63564"
+    },
+    {
+      "path": "src/pokemon_red/workspace.py",
+      "bytes": 7775,
+      "sha256": "4682f1632711ee4cfa78c4d524a75b75ca5ae60a7c456bddc6f754b7b86ae047"
+    },
+    {
+      "path": "src/pokemon_red/zones.py",
+      "bytes": 522,
+      "sha256": "f765df1e33714eb8c47506bb32c17a9aaa568647496addcd2f34cadb566e8821"
+    },
+    {
+      "path": "tests/public/__init__.py",
+      "bytes": 187,
+      "sha256": "5b10ec6ee5237b503d452afef32be0623a1011b82a1a112cd2327ca8cb9d8275"
+    },
+    {
+      "path": "tests/public/test_analytics_service.py",
+      "bytes": 5176,
+      "sha256": "55e3396319e7faf0abe34db087f96a12dfab979146755288caee386cd6999378"
+    },
+    {
+      "path": "tests/public/test_healing_state.py",
+      "bytes": 2734,
+      "sha256": "2d3e322e93cefd1701d56dc92e8200f9e56608d2a7851bba768391c62fe64025"
+    },
+    {
+      "path": "tests/public/test_installation_versions.py",
+      "bytes": 10239,
+      "sha256": "9d92f0275eb4def4d54007b3a80988f601904c4f50c954eaa04db1bbe7584d9b"
+    },
+    {
+      "path": "tests/public/test_paths_reference.py",
+      "bytes": 7593,
+      "sha256": "8e6841c2328e5452424ec528c9fee3c5d0721b3bcc9100da5478aa7890e74831"
+    },
+    {
+      "path": "tests/public/test_runtime_data.py",
+      "bytes": 6366,
+      "sha256": "1e36613d8c8ad3bdf3639313fed8bef6d84f771b9d3939a543bd0698d3c691a4"
+    },
+    {
+      "path": "tests/public/test_scheduler_contract.py",
+      "bytes": 1415,
+      "sha256": "3cebec680d84e34be68a0dfbe175632d3898f61e8abf80adaef8ae777ba8e4db"
+    },
+    {
+      "path": "tests/public/test_source_export.py",
+      "bytes": 9387,
+      "sha256": "1076d61c46901e2e60ab23feca2567db9c61b93acf57698e037dfe82047a9bc6"
+    },
+    {
+      "path": "tests/test_accessibility.py",
+      "bytes": 4963,
+      "sha256": "deb90ef537a1b7f3e910f3fb46857c955b270d37da4462a8aa68d26fde3f07ff"
+    },
+    {
+      "path": "tests/test_acquisition.py",
+      "bytes": 4720,
+      "sha256": "ee228f14ad33ce84d76fcd128ec5093782ab82425dfa2d8c0c892fff0d4a1819"
+    },
+    {
+      "path": "tests/test_acquisition_healing.py",
+      "bytes": 5629,
+      "sha256": "2322b86e0c6b78cd7a6629aaefc0fe5fabf4d604845a7e570ad5674511cad0de"
+    },
+    {
+      "path": "tests/test_adaptive.py",
+      "bytes": 4965,
+      "sha256": "b654bdde9631b834ca6ffd2c6d986144ced45bc84fcb48a3e4bd1ab58fd0598a"
+    },
+    {
+      "path": "tests/test_adaptive_travel.py",
+      "bytes": 10259,
+      "sha256": "b2daec314547fe5253c836cb08ac39e91f6ebae2f8be75c7c6aac4c8158280e1"
+    },
+    {
+      "path": "tests/test_ai_overlay.py",
+      "bytes": 5107,
+      "sha256": "e558098772a9431a8cef9e115bda8892d62e7ff54199c5ce54ec74ec6da3d218"
+    },
+    {
+      "path": "tests/test_async_analytics.py",
+      "bytes": 7471,
+      "sha256": "afd0def703cfe726c56d02c2f09c333f0ecf13b7991ab7a30c53e9e5e0e977ef"
+    },
+    {
+      "path": "tests/test_audit_regressions.py",
+      "bytes": 13732,
+      "sha256": "82e60e50dda94475f167ad7ac9b85280d27f94a01bbc5a2b4c0e6fa9b2ba6e00"
+    },
+    {
+      "path": "tests/test_autocatch.py",
+      "bytes": 9189,
+      "sha256": "05b3f5f24bbf84323b90ba45565e61750a2d7faec42aec1beddb1c95f26da146"
+    },
+    {
+      "path": "tests/test_automatic_speed.py",
+      "bytes": 7825,
+      "sha256": "5defd2c6524e6ed4fa58aa213a1f6c38e5854062d62d125dd3b12b69e161587b"
+    },
+    {
+      "path": "tests/test_automation.py",
+      "bytes": 9662,
+      "sha256": "542f79712ca46253217746be5940fd260e00031367d262edd08ba0777a3a406b"
+    },
+    {
+      "path": "tests/test_autosave_timer.py",
+      "bytes": 1860,
+      "sha256": "dc48eb584ebfd51a27beab13860abee4c54ebe6652202291961d8516e0d02c32"
+    },
+    {
+      "path": "tests/test_battle_decisions.py",
+      "bytes": 8949,
+      "sha256": "05e6199d07c72286e5f79dfc8a34b13606e82e4f79438e32185ba3a02c88cbf0"
+    },
+    {
+      "path": "tests/test_battle_phases.py",
+      "bytes": 7516,
+      "sha256": "7c122c68176f55def874925c815993305df8bce3637529378666135593a26a03"
+    },
+    {
+      "path": "tests/test_battle_recovery.py",
+      "bytes": 4978,
+      "sha256": "f8d226eb0e4d40c6145870556f9ab92cb4cb64d025ef25655cf122c084616cba"
+    },
+    {
+      "path": "tests/test_battle_script_identity.py",
+      "bytes": 1741,
+      "sha256": "a3ae3d4820886b14482d76d4304ce79f25b36d8cb51ad7a944c9b76b1b3cb432"
+    },
+    {
+      "path": "tests/test_battle_sidebar.py",
+      "bytes": 7850,
+      "sha256": "8a46b2e0005dac2abdd340fb2954b94bd00b38ed3cf1db38493524ed59b29aa6"
+    },
+    {
+      "path": "tests/test_capture_editions.py",
+      "bytes": 2619,
+      "sha256": "e1657c85c3de93dfcae4007055c3f03b3ba525c23e8c7694c7e5485fbc7227c2"
+    },
+    {
+      "path": "tests/test_catch_estimates.py",
+      "bytes": 2023,
+      "sha256": "adc73c50f972853d4b5a0aadd9b681d58e1ae36a038159fb1e04425d4a2ba906"
+    },
+    {
+      "path": "tests/test_catch_lifecycle.py",
+      "bytes": 10815,
+      "sha256": "bdefbeab8ad2f27dd9d4c335f539fe431b9f4b857094efe91acc5046c784e35e"
+    },
+    {
+      "path": "tests/test_catch_metrics_ui.py",
+      "bytes": 1463,
+      "sha256": "177a7ae47579ff344490e2ca5332074c76a021e1a3fc7e2c92679105a48295f7"
+    },
+    {
+      "path": "tests/test_coverage_policy.py",
+      "bytes": 6314,
+      "sha256": "3e70d0c2996430a6e0b9e487aef3d3468a462d641704a03a95afa8b4b9bdf249"
+    },
+    {
+      "path": "tests/test_coverage_replan.py",
+      "bytes": 3454,
+      "sha256": "754581152cf9fb55af0610d33fd27d08aaed4beee130a75ba86a4c6be1b99875"
+    },
+    {
+      "path": "tests/test_custom_speed.py",
+      "bytes": 1720,
+      "sha256": "40883ee5c604ec682833d68bd509bca1908b6143b5a84d3f44221755e14092b2"
+    },
+    {
+      "path": "tests/test_demand_planning.py",
+      "bytes": 12770,
+      "sha256": "5dca827486644014d9395ae2b96725e76c621943d34665953f390164855b8a68"
+    },
+    {
+      "path": "tests/test_design_components.py",
+      "bytes": 7282,
+      "sha256": "061bec898311113f0a2be489b72637983973b3c3c2260b402a4f403b9bd8c783"
+    },
+    {
+      "path": "tests/test_diglett_cave.py",
+      "bytes": 5450,
+      "sha256": "b0a7fb308d8d0d7c4f71bda40087442a4c002d837f509a6737e4322fa8326912"
+    },
+    {
+      "path": "tests/test_encounter_safety.py",
+      "bytes": 3830,
+      "sha256": "9c38fbe51a6742afa111a2979218269080c6e65cf708480ba3af89ec327197b7"
+    },
+    {
+      "path": "tests/test_engine_runtime.py",
+      "bytes": 22515,
+      "sha256": "f08ea01d1118cceade77c05b65987f7877818831bd70569d2e920c3d694e8f05"
+    },
+    {
+      "path": "tests/test_field_encounters_sidebar.py",
+      "bytes": 4870,
+      "sha256": "9fffefd228e06c5b1bf0983d161e591e66c6fa6689d3ebc307737356b2eea22f"
+    },
+    {
+      "path": "tests/test_field_recovery.py",
+      "bytes": 3738,
+      "sha256": "ccef6f50f4fc46cdbc83d938bdc77440166b625fd85e9067b66a3ff5ad2baa2e"
+    },
+    {
+      "path": "tests/test_field_teleport.py",
+      "bytes": 11367,
+      "sha256": "10aa1ec5f6195527190a0eebc83a9847fd325c3f880655cb9232233cdebb68ff"
+    },
+    {
+      "path": "tests/test_field_tools.py",
+      "bytes": 6756,
+      "sha256": "39d9ab6192c707aff0e7c0068d9f0a8ecc13606e1a52959ab90e723eed0ac480"
+    },
+    {
+      "path": "tests/test_game_adapters.py",
+      "bytes": 8582,
+      "sha256": "0302a7c3b0d26b2d63826974751bb156bcae1b3911fe7332d09a61c3980a77cb"
+    },
+    {
+      "path": "tests/test_game_editions.py",
+      "bytes": 6268,
+      "sha256": "2bc9367e11e812019f7dc539df0a7a7caa7b5c1446f2f92b10bd3e76d71e6feb"
+    },
+    {
+      "path": "tests/test_grass_search.py",
+      "bytes": 7502,
+      "sha256": "1728d256696d4ce993d2adc991c75d5baf2d49b1780f95d4cdf78592a890a976"
+    },
+    {
+      "path": "tests/test_grind.py",
+      "bytes": 10657,
+      "sha256": "5dd359b011f7c26389e1e6d4554b566dda1803afa22019e5d7e71ab56a8bf55f"
+    },
+    {
+      "path": "tests/test_hoenn_editions.py",
+      "bytes": 6158,
+      "sha256": "ab16a9ac44ae3e4ff9ec99fd4ec6a469b1285b598669f3903b0c89fce4b27ee0"
+    },
+    {
+      "path": "tests/test_hotkey_settings.py",
+      "bytes": 11824,
+      "sha256": "ea29af1060094ef21ef5b7bb40af0544740735c73eca40b162132f55eb9a62e2"
+    },
+    {
+      "path": "tests/test_hunt_slots.py",
+      "bytes": 4810,
+      "sha256": "d0e3d9d67338e2b581376c8b1e1cc13af2883204adee783841dee72beac0a385"
+    },
+    {
+      "path": "tests/test_installation_jobs.py",
+      "bytes": 8304,
+      "sha256": "fd55239ca0a071a719df4106982fd9b64cc89d15ae56ac3415d970608a0d60a0"
+    },
+    {
+      "path": "tests/test_inventory_library.py",
+      "bytes": 7201,
+      "sha256": "9a0fa4e6a2cd99f277a76851cb7e67a943353544df9576b9c3dde77f14aef346"
+    },
+    {
+      "path": "tests/test_item_delivery.py",
+      "bytes": 14535,
+      "sha256": "ae18e2f3d3e28466149d8cce226e7a6241870b161d150858af3eb80a49da3748"
+    },
+    {
+      "path": "tests/test_keyboard.py",
+      "bytes": 12356,
+      "sha256": "4c8bedc16efacdab7be1b1555a8f721535758977b5fd7b71c49bc196379b3f2a"
+    },
+    {
+      "path": "tests/test_localization.py",
+      "bytes": 13561,
+      "sha256": "915807ead17ed85e23d5b37511a309f3ef186099152ee7ccd9917c9518138481"
+    },
+    {
+      "path": "tests/test_localization_review.py",
+      "bytes": 5902,
+      "sha256": "fbb27e053443305075b83d8e325d23bc78016c55f8271f891d2351e3e087721d"
+    },
+    {
+      "path": "tests/test_location_travel.py",
+      "bytes": 11475,
+      "sha256": "8a718f197f7f0176e765b6453aae07286c7aba66444ace47fb3e3b784131cdcd"
+    },
+    {
+      "path": "tests/test_menu_history.py",
+      "bytes": 8783,
+      "sha256": "4990244e80ec676f54e8c333361e54282e8819ab953a5f91b302d74d4784e0b1"
+    },
+    {
+      "path": "tests/test_move_plan.py",
+      "bytes": 11374,
+      "sha256": "d390502c9c101e8107f9fd8bcecbf067b6674265246a5c57f1deccd656c4b98f"
+    },
+    {
+      "path": "tests/test_move_reference.py",
+      "bytes": 7365,
+      "sha256": "4519cdb8450134a5e8160bb47e8e1109b8f3704e2a52fe9e64adcc09f67ccf41"
+    },
+    {
+      "path": "tests/test_move_review.py",
+      "bytes": 4902,
+      "sha256": "3ab78eeca52bd6b9b1ba66b5a9af79d56da70bae37861e7d24bd5ca7cb613307"
+    },
+    {
+      "path": "tests/test_movement.py",
+      "bytes": 9901,
+      "sha256": "4f67f396d178546d8426b0ab359d0db99d71301a24fd46a0753b595e6ce1cd4c"
+    },
+    {
+      "path": "tests/test_natures.py",
+      "bytes": 1924,
+      "sha256": "b1a59c29ec2d774c9629a7e321f44491410c4f971929b408e4b29a6cd5db0748"
+    },
+    {
+      "path": "tests/test_navigation.py",
+      "bytes": 8089,
+      "sha256": "a705e3f6b3338c9700e63112f1e11d2a49db1763296d7e2dba4869fee03e7635"
+    },
+    {
+      "path": "tests/test_optimizer.py",
+      "bytes": 10823,
+      "sha256": "230d12db8379ab4939cdceda1a4a8a9a518c5ece3fda670c0ed6ef5b83c1006f"
+    },
+    {
+      "path": "tests/test_owned_collection.py",
+      "bytes": 2916,
+      "sha256": "6b1980c4b54bbdf7a5d98fd4ad3b06f5142756b5f4514a1c04d3bb17280d6db0"
+    },
+    {
+      "path": "tests/test_party_management.py",
+      "bytes": 8367,
+      "sha256": "b6fdb1d07fe0c3a75006cfe4e10c146b09769d6b8c9494c2f4643d4f3761f1c4"
+    },
+    {
+      "path": "tests/test_party_training.py",
+      "bytes": 4781,
+      "sha256": "40d7afe87c9b34c459cecb32d1c29ff32b448e0ccff03bf00388ec16a7a380d3"
+    },
+    {
+      "path": "tests/test_path_cache_startup.py",
+      "bytes": 9135,
+      "sha256": "ad11f676c19e1f88c288951b76e41b4c48e043b1062d9a7982496ca87ab2f121"
+    },
+    {
+      "path": "tests/test_pixel_tables.py",
+      "bytes": 7109,
+      "sha256": "7d8fadd555a667fc2755c9aaea935537b0d260c6d38362763ce68fc9a9ba9dc0"
+    },
+    {
+      "path": "tests/test_planning_invalidation.py",
+      "bytes": 9000,
+      "sha256": "a62706d2435aa249bcbc33fcfb0625fc1413bf1621fa1ea28306c62ddda26ace"
+    },
+    {
+      "path": "tests/test_pokemon_hub.py",
+      "bytes": 6671,
+      "sha256": "37f67d081888a6cd9fec3bd5f625027f04fadb5015bf06da58353da63ea47b15"
+    },
+    {
+      "path": "tests/test_pokemon_sources.py",
+      "bytes": 4057,
+      "sha256": "ab070e88ddfca41e8bcf7c8153d373a5377e496abc7c886fa05dd38446edda83"
+    },
+    {
+      "path": "tests/test_profile_trade.py",
+      "bytes": 4444,
+      "sha256": "ff50325c0ed02aaf8d847883979ac57fe6bf91e78079d5bdda76fb544ec3092f"
+    },
+    {
+      "path": "tests/test_prologue.py",
+      "bytes": 6928,
+      "sha256": "c9cac6f73aa4a00bda9336c83996e05a38d471b9163f7bd9f79772ad85cf1a1d"
+    },
+    {
+      "path": "tests/test_reference_paths.py",
+      "bytes": 8404,
+      "sha256": "b5c0eace0e448f9a5d8e241cd4cbe9f8850ff726b02a8b6624f3d9aa5532b626"
+    },
+    {
+      "path": "tests/test_region_map.py",
+      "bytes": 2270,
+      "sha256": "33ae5195875b88be0eb4977e4b71516d0eea04bf9702c4e68a19bd661ef334be"
+    },
+    {
+      "path": "tests/test_regression_runner.py",
+      "bytes": 9136,
+      "sha256": "5d3dd327cb7c641b5f6d3adbf2a4a428ab5c5937bf29e241d91eaee10c8bf677"
+    },
+    {
+      "path": "tests/test_regression_world_paths.py",
+      "bytes": 3953,
+      "sha256": "0869d12757e1a4ba3f92b811ae5325988099f60cc870188f4f21e9b4f36a689c"
+    },
+    {
+      "path": "tests/test_route11_recovery.py",
+      "bytes": 9767,
+      "sha256": "13ebc7260a96a47213be4a4e8af4e2a91a84926b824c03ff9fe5c0638269ae7b"
+    },
+    {
+      "path": "tests/test_route_maps.py",
+      "bytes": 2525,
+      "sha256": "d569abc80e69efbb006f6c7de1645d2ad34ab1788733d7556d80f7a53f44e626"
+    },
+    {
+      "path": "tests/test_runtime_performance.py",
+      "bytes": 13667,
+      "sha256": "20ce1016a1f2511d387864e8329581be0d67a667dc9baf1a9ec5fe7fbddda43b"
+    },
+    {
+      "path": "tests/test_save_reliability.py",
+      "bytes": 8036,
+      "sha256": "87d5146b6f0cb0dcd871d5992e5f3642c8adac45f8148a3b8960d8ac64ac86b9"
+    },
+    {
+      "path": "tests/test_save_system.py",
+      "bytes": 13107,
+      "sha256": "3a5c20e79e1d4f541199361ed9324c9f250c718c791cba968d97f6bf4462cfa1"
+    },
+    {
+      "path": "tests/test_saved_encounters.py",
+      "bytes": 9298,
+      "sha256": "fe4307bc0f9009c9d8229e3c1923e1cb1ba5ad8ee865bba9edc2a7b987d82599"
+    },
+    {
+      "path": "tests/test_scheduling.py",
+      "bytes": 12167,
+      "sha256": "51c6b24dc181c5f8d9b35f111025bb63ed850477f03f781f22ab172624786eb7"
+    },
+    {
+      "path": "tests/test_scrolling.py",
+      "bytes": 2264,
+      "sha256": "7d3dfce4e632ad875f5bb0c81d2300edd06afa3ad51e4b82853fad3de2f684a3"
+    },
+    {
+      "path": "tests/test_search_odds.py",
+      "bytes": 7428,
+      "sha256": "85454bf702fe4761ca4cf65242d88f64952e3df8ecf973357e5ebe58716f8553"
+    },
+    {
+      "path": "tests/test_search_preferences.py",
+      "bytes": 11027,
+      "sha256": "67457721b1f41f45dae721ae763c1c587801c9e36d86fde94215dcd92274d993"
+    },
+    {
+      "path": "tests/test_search_transport.py",
+      "bytes": 3225,
+      "sha256": "b517329e5f23abc4fd28638a7a2f0c25b04a7c6289f6cf83efbe4f1e289314f3"
+    },
+    {
+      "path": "tests/test_session.py",
+      "bytes": 11906,
+      "sha256": "d7b7c2a4f8272e2860198e77211944e740c055691910da906c8c101ede060f6a"
+    },
+    {
+      "path": "tests/test_session_management.py",
+      "bytes": 15638,
+      "sha256": "e0157e6aa88a7c5dafa7e0c105cb593c4ac7f10491fcce0bfee548bc5a554313"
+    },
+    {
+      "path": "tests/test_starter_recovery.py",
+      "bytes": 14755,
+      "sha256": "dee359959d8a89831304c76b4241e7f1285aba11be2649435a0213db86aaa119"
+    },
+    {
+      "path": "tests/test_stat_values_ui.py",
+      "bytes": 7687,
+      "sha256": "feb04fed8117938192727daae2495eea1492ec3ba6de9ac57e47bae8dceaa491"
+    },
+    {
+      "path": "tests/test_team_ui_model.py",
+      "bytes": 2284,
+      "sha256": "50de91fe0e594406802ff7f3c16333ef722ea5b39548f0e562922183435daa8f"
+    },
+    {
+      "path": "tests/test_timed_catch.py",
+      "bytes": 8875,
+      "sha256": "ca8ffbaf29f448a5f514be2b6675cda076b55264c4f68255f75189a10e2803b0"
+    },
+    {
+      "path": "tests/test_timed_catch_ui.py",
+      "bytes": 3503,
+      "sha256": "cc94e0b3f5f190927ff184515cf61cb57654b381a741ad9b1760146357b80515"
+    },
+    {
+      "path": "tests/test_trainer_navigation.py",
+      "bytes": 16480,
+      "sha256": "e3d72d72e8a5fc9d6228c44c5706df5f8a8f433c50e8a487a376bb50acbce031"
+    },
+    {
+      "path": "tests/test_training.py",
+      "bytes": 7377,
+      "sha256": "10ff23c674e6a0ce195751680eb31aa50f8145f64e2f329500b56bbb8ba79615"
+    },
+    {
+      "path": "tests/test_training_item.py",
+      "bytes": 3725,
+      "sha256": "2bcc744c28b0d5beed4904778711e3dd8ada4951ccf4e23fe5a0a7140ecf0cb3"
+    },
+    {
+      "path": "tests/test_training_latency.py",
+      "bytes": 7950,
+      "sha256": "fa914f762bea34d290a9200d5f6deb634e97245b35ccaba7608ca0949853c3cf"
+    },
+    {
+      "path": "tests/test_training_tactics.py",
+      "bytes": 6680,
+      "sha256": "18eb405ac3ff35aafbc9725ac346c57981492e6bc6dff2c7e1ea32f32f6cef10"
+    },
+    {
+      "path": "tests/test_transition_recovery.py",
+      "bytes": 6629,
+      "sha256": "c6284af484076678d70b20728099e481cfed2c4ec73ce3dd3e6433ac6ea52fcd"
+    },
+    {
+      "path": "tests/test_two_hit_policy.py",
+      "bytes": 5394,
+      "sha256": "79f88cba7292fe600f14e0ed0cc95d42354aa1d319c62bf20c775d82cb6f31f9"
+    },
+    {
+      "path": "tests/test_walking_route.py",
+      "bytes": 6866,
+      "sha256": "633d4256e1fc7938c7fd2748f14850f32dd2a3e9711b7a060a514f28b586c702"
+    },
+    {
+      "path": "tests/test_water_hunting.py",
+      "bytes": 4672,
+      "sha256": "6a899ce44892bddd9c04f70ff15a60fb8d1e0806f071c4f22a672cac002658a5"
+    },
+    {
+      "path": "tests/test_wild_hunting.py",
+      "bytes": 7942,
+      "sha256": "0a8be4af58bceda9275a06c1fb4af9f97cb3d55f9b1832f374945520116776cc"
+    },
+    {
+      "path": "tests/test_workspace_ui.py",
+      "bytes": 5195,
+      "sha256": "ee19a38b87937df87e98aa940e7f8f072a4f887e5ed0010fea74ce23416df9f7"
+    },
+    {
+      "path": "tools/benchmark_analytics.py",
+      "bytes": 9694,
+      "sha256": "85a3f1110c58c5163fe4a82349b3a8ecd1356be3ff6eaa573f8684d586a27b3c"
+    },
+    {
+      "path": "tools/benchmark_installations.py",
+      "bytes": 4043,
+      "sha256": "e2bbdfcb5edec70fed824760cfc5e2f449c945cef55390ff919a37644fe23122"
+    },
+    {
+      "path": "tools/benchmark_reference.py",
+      "bytes": 5639,
+      "sha256": "8ca353312d4d5ca058283276b7052513aaa1482ccae7e50e657a04d268a792d5"
+    },
+    {
+      "path": "tools/build_reference.py",
+      "bytes": 851,
+      "sha256": "9aaabf9494588dd21f56c48e79d9f61b29249b2369826680f699cb770b7236ee"
+    },
+    {
+      "path": "tools/check.py",
+      "bytes": 223,
+      "sha256": "2289b4d3867e44f1337360e811d17d1d024abf820a3ea7194d56b039e96e1337"
+    },
+    {
+      "path": "tools/check_localization.py",
+      "bytes": 5775,
+      "sha256": "95f64e62754a00381a140e1f516ea2fa40e5a335d238b10850dd710a493f0013"
+    },
+    {
+      "path": "tools/export_source.py",
+      "bytes": 12981,
+      "sha256": "2f84713057b0cc2f29d359cca32414c2cb21b37f3a2232080e9e6d305625e6bb"
+    },
+    {
+      "path": "tools/public_checks.py",
+      "bytes": 948,
+      "sha256": "37d8e9f97fb657014136b1ec35d4f4e379c8ef99f7b900813c6d1d6a207dc4a6"
+    },
+    {
+      "path": "tools/regression/__init__.py",
+      "bytes": 74,
+      "sha256": "575d9caf83f78f9ae6ba26b6ecd17968a26698e37d3ddf6e120179d273deffed"
+    },
+    {
+      "path": "tools/regression/model.py",
+      "bytes": 3373,
+      "sha256": "a5cfdbf7a92345ab851ceac74636f61c932c054e5977117c478c26eb37576ee8"
+    },
+    {
+      "path": "tools/regression/runner.py",
+      "bytes": 16802,
+      "sha256": "c15383540e0636910d36b71e0f131b19d38c3b01dadfb8d3795835265bd53d1f"
+    },
+    {
+      "path": "tools/regression/scenarios.py",
+      "bytes": 8929,
+      "sha256": "079e7204721f76d4797ac702bb05f46f5c695bc1c5fd5d4e94a0fb93421f03d0"
+    },
+    {
+      "path": "tools/regression/worker.py",
+      "bytes": 16870,
+      "sha256": "5a443dd23b6e579ab5014cc1809fd1929af0c949d757ea7ad4df4875bc77d37a"
+    },
+    {
+      "path": "tools/source_export_manifest.json",
+      "bytes": 1520,
+      "sha256": "422fbe29bf24784ff749ddde32a870c2128a608aa2f7695e0626d9b069e3fe66"
+    }
+  ]
+}

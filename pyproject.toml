@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pokedesk"
+version = "0.1.0.dev0"
+description = "Local Gen III Pokémon session tools and guarded automation"
+readme = "README.github.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "licenses/*.txt"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: MacOS :: MacOS X",
+]
+
+[project.scripts]
+pokedesk = "pokemon_red.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pokemon_red"]
+namespaces = false
+
+[tool.setuptools.package-data]
+pokemon_red = ["locales/en.json", "locales/ru.json", "locales/manifest.json"]
