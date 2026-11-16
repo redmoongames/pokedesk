@@ -118,12 +118,22 @@ class Cartridge:
         names = {(g, n): name for g, key in enumerate(groups['group_order'])
                  for n, name in enumerate(groups[key])}
         entries = []
+        occurrences = {}
         address = self.symbols['gWildMonHeaders']
         for i in range(1024):
             group, number = self.raw(address + 20*i, 2)
             if group == 255:
                 break
             name = names[(group, number)]
+            occurrences[name] = occurrences.get(name, 0) + 1
+            # The cartridge contains eight extra Mystery Gift Altering Cave
+            # tables. They are not ordinary encounters available to a player.
+            # Treating every header as an independently reachable population
+            # would offer Mareep/Aipom/etc. as catchable in a normal save.
+            if name == 'SixIsland_AlteringCave' and occurrences[name] > 1:
+                continue
+            if occurrences[name] > 1:
+                raise ValueError('Ambiguous ordinary encounter table: ' + name)
             row = dict(map=metadata['maps'][name]['id'], base_label='g' + name + '_FireRed')
             for j, field in enumerate(FIELDS):
                 pointer = self.u32(address + 20*i + 4 + 4*j)

@@ -103,8 +103,8 @@
     },
     {
       "path": "docs/RELEASE_VALIDATION.md",
-      "bytes": 3685,
-      "sha256": "d9e5b7a75bba0abae924ebeb7e28280d040e44acd2a9a52eeb313b38c21d4838"
+      "bytes": 3918,
+      "sha256": "55857f6f61ca5669d134e958e3c839ddb78490e058fc3f3f92a107bd45ae0cf6"
     },
     {
       "path": "docs/SOURCE_SETUP.md",
@@ -368,13 +368,13 @@
     },
     {
       "path": "src/pokemon_red/desktop.py",
-      "bytes": 8036,
-      "sha256": "7d7da7e5d80f4387f699ace5499ac122e902b23166d189de08004bba276c1e0c"
+      "bytes": 8132,
+      "sha256": "08625fed6ea397ff38df75979683cccd202b4df1f18ac3120376f2edca10ea80"
     },
     {
       "path": "src/pokemon_red/desktop_install.py",
-      "bytes": 6888,
-      "sha256": "aecb858b93702f329f7bcd15a23f24058c3d6ee4a4a308b5841453739a98ee3f"
+      "bytes": 7044,
+      "sha256": "ba3d7491cce87b693988f2c5ec53f12c51848072c542f71856515dca4f4e40af"
     },
     {
       "path": "src/pokemon_red/dex_reference.py",
@@ -673,8 +673,8 @@
     },
     {
       "path": "src/pokemon_red/locales/en.json",
-      "bytes": 323484,
-      "sha256": "9fab294e07189af2ef6987ddf808509d7eeeac7c5ad2ba8668afa6ed371ba704"
+      "bytes": 323602,
+      "sha256": "b15f75185de587d8a42384229329b452a75fa8d306381f5c40b8593843bdf0a8"
     },
     {
       "path": "src/pokemon_red/locales/manifest.json",
@@ -683,8 +683,8 @@
     },
     {
       "path": "src/pokemon_red/locales/ru.json",
-      "bytes": 483592,
-      "sha256": "6514c94af5ad8937ca61d483e868a8da7b1e250e8310aae21bc7a9b0bc119d39"
+      "bytes": 483803,
+      "sha256": "ddd3922f2be9d9fb4f086331b44805c9a850b1b4e3edd72ac54d208b86811cc0"
     },
     {
       "path": "src/pokemon_red/localized_tk.py",
@@ -998,8 +998,8 @@
     },
     {
       "path": "src/pokemon_red/rom_resources.py",
-      "bytes": 21965,
-      "sha256": "8c97c713c4d317b3485d72dc39c08564fb9ef9258789522ad306c42bee378dab"
+      "bytes": 22575,
+      "sha256": "b42e31754218dcca21cfccd9d2dafaafc93961b1450537d124fa0973be4e7ce4"
     },
     {
       "path": "src/pokemon_red/route_profiles.py",
@@ -1333,8 +1333,8 @@
     },
     {
       "path": "tests/public/test_desktop_install.py",
-      "bytes": 10565,
-      "sha256": "805b35b51c2beea1deda3e9e30cde7e8d84f13df87ef9bb4c776c47cef348fab"
+      "bytes": 13056,
+      "sha256": "c9341f2e753becefa60c7963a8cdd9f5e83e7dcdcffef3ed5e60ce0de54dcf17"
     },
     {
       "path": "tests/public/test_healing_state.py",

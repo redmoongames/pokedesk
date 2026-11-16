@@ -36,6 +36,10 @@ class InvalidRomError(ValueError):
     pass
 
 
+class SetupUpdatedError(RuntimeError):
+    pass
+
+
 def default_library():
     return Path.home() / 'Library/Application Support/PokeDesk'
 
@@ -124,6 +128,8 @@ def prepare_desktop(bundle, library, rom, *, progress=lambda stage: None, cancel
             from .rom_resources import prepare_resources
             summary = prepare_resources(staging, payload, checkpoint)
             checkpoint('setup.verify')
+            if build_record(bundle) != manifest:
+                raise SetupUpdatedError('setup.updated')
             # A fresh namespace also repairs damaged cached versions without
             # renaming/removing code still held by another resumable job.
             slot = uuid.uuid4().hex

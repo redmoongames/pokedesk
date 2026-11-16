@@ -6,13 +6,14 @@ import tempfile
 import threading
 import runpy
 import sys
+import struct
 from types import ModuleType
 import unittest
 from unittest.mock import patch
 
 from pokemon_red import desktop_install as install
 from pokemon_red.paths import session_paths
-from pokemon_red.rom_resources import populations, sprite_png, Cartridge
+from pokemon_red.rom_resources import populations, sprite_png, Cartridge, SEED
 
 
 class DesktopInstallTests(unittest.TestCase):
@@ -100,6 +101,20 @@ class DesktopInstallTests(unittest.TestCase):
                 self.prepare(cancelled=cancelled)
         self.assertEqual((self.library / install.RECEIPT).read_bytes(), receipt)
 
+    def test_app_update_during_preparation_cannot_adopt_a_mixed_installation(self):
+        self.prepare()
+        receipt = (self.library / install.RECEIPT).read_bytes()
+        marker = (self.library / '.pokedesk-paths.json').read_bytes()
+        def update_while_compiling(staging, payload, progress):
+            result = self.compile(staging, payload, progress)
+            (self.bundle / 'desktop-build.json').write_text(json.dumps(dict(schema=1, build_id='c'*64)))
+            return result
+        with patch('pokemon_red.rom_resources.prepare_resources', side_effect=update_while_compiling):
+            with self.assertRaises(install.SetupUpdatedError):
+                self.prepare()
+        self.assertEqual((self.library / install.RECEIPT).read_bytes(), receipt)
+        self.assertEqual((self.library / '.pokedesk-paths.json').read_bytes(), marker)
+
     def test_changed_or_corrupt_installation_is_not_reused(self):
         version = self.prepare()
         target = version.root / 'vendor/local.json'
@@ -161,6 +176,35 @@ class DesktopInstallTests(unittest.TestCase):
 
 
 class CartridgeCompilerTests(unittest.TestCase):
+    def duplicate_map_cartridge(self):
+        data = bytearray(1024)
+        for offset, table, mons, species in ((0,0x100,0x200,41),(20,0x120,0x240,179)):
+            struct.pack_into('<I', data, offset+4, 0x08000000+table)
+            data[table] = 20
+            struct.pack_into('<I', data, table+4, 0x08000000+mons)
+            for slot in range(12):
+                struct.pack_into('<BBH', data, mons+slot*4, 5,5,species)
+        data[40] = 255
+        cartridge = object.__new__(Cartridge)
+        cartridge.data = bytes(data)
+        cartridge.symbols = dict(gWildMonHeaders=0x08000000)
+        return cartridge
+
+    def test_unreleased_altering_cave_populations_are_not_catch_candidates(self):
+        cartridge = self.duplicate_map_cartridge()
+        metadata = json.loads((SEED / 'location_reference.json').read_text())
+        name = next(name for name in metadata['maps'] if name.endswith('_AlteringCave'))
+        self.assertEqual(name, 'SixIsland_AlteringCave')
+        wild = cartridge.encounters(dict(group_order=['group'], group=[name]), metadata)
+        rows = wild['wild_encounter_groups'][0]['encounters']
+        self.assertEqual(len(rows), 1)
+        self.assertEqual({m['species'] for m in rows[0]['land_mons']['mons']}, {'SPECIES_41'})
+
+    def test_unrecognized_duplicate_map_tables_fail_closed(self):
+        with self.assertRaisesRegex(ValueError, 'Ambiguous ordinary'):
+            self.duplicate_map_cartridge().encounters(dict(group_order=['group'], group=['Route1']),
+                                                       dict(maps=dict(Route1=dict(id='MAP_ROUTE1'))))
+
     def test_rom_hash_check_cannot_be_bypassed_by_filename(self):
         with self.assertRaises(ValueError):
             Cartridge(b'not a cartridge')

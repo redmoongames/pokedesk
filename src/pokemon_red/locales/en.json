@@ -4063,5 +4063,6 @@
   "setup.failed": "Setup could not finish: {error}. Your saved games have not been removed.",
   "setup.file": "File",
   "app.continue": "Continue / Begin",
-  "app.new": "New playthrough…"
+  "app.new": "New playthrough…",
+  "setup.updated": "The application was updated during preparation. Close PokéDesk and reopen it to finish safely."
 }

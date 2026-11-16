@@ -11,7 +11,7 @@ from . import localized_tk as tk
 from .localized_tk import filedialog, messagebox
 from .desktop_install import (default_library, installed_version, prepare_desktop,
                               launch_command, SetupCancelled, LibraryBusyError)
-from .desktop_install import InvalidRomError
+from .desktop_install import InvalidRomError, SetupUpdatedError
 from .i18n import set_locale, t, LOCALE_NAMES
 from .ui import BG, TEXT, MUTED, AMBER, GREEN, Button, Segments, label, theme
 
@@ -128,14 +128,14 @@ class SetupWindow:
                     self.finish_close()
                     return
                 key = str(error)
-                if isinstance(error, LibraryBusyError) or key in ('setup.rom_conflict',):
+                if isinstance(error, (LibraryBusyError, SetupUpdatedError)) or key in ('setup.rom_conflict',):
                     text = t(key)
                 elif isinstance(error, InvalidRomError):
                     text = t('setup.bad_rom')
                 else:
                     text = t('setup.failed', error=str(error))
                 self.status.configure(text=text, fg=AMBER)
-                self.choose.configure(state='normal')
+                self.choose.configure(state='disabled' if isinstance(error, SetupUpdatedError) else 'normal')
             else:
                 self.pool.shutdown(wait=False)
                 self.root.destroy()
