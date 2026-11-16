@@ -183,7 +183,21 @@ class Application:
         if self.quitting:self.root.destroy();return
         self.root.deiconify();self.root.configure(menu='');self.root._scroll_delta_reader=None
         self.home=StartupHome(self.root,self.folder,self.choose);self.root.createcommand('::tk::mac::Quit',self.quit)
+        menu=tk.Menu(self.root,tearoff=False);file_menu=tk.Menu(menu,tearoff=False)
+        file_menu.add_command(label=t('app.continue'),accelerator='⌘↩',command=self.continue_first)
+        file_menu.add_command(label=t('app.new'),command=self.home.create)
+        file_menu.add_separator();file_menu.add_command(label=t('setup.open_data'),command=self.open_data_folder)
+        file_menu.add_separator();file_menu.add_command(label=t('setup.exit'),command=self.quit)
+        menu.add_cascade(label=t('setup.file'),menu=file_menu);self.root.configure(menu=menu)
+        self.root.bind('<Command-Return>',lambda _:self.continue_first())
         self.root.report_callback_exception=self.menu_error
+    def continue_first(self):
+        if self.home is None or self.home.closed or self.home.future or self.home.management_future:return
+        row=next((row for row in getattr(self.home,'rows',[]) if not row.get('busy') and not row.get('error')),None)
+        if row is not None:self.choose(row)
+    def open_data_folder(self):
+        import subprocess
+        subprocess.Popen(['/usr/bin/open',str(self.folder)])
     def menu_error(self,kind,error,tb):messagebox.showerror('Pokémon',str(error),parent=self.root)
     def choose(self,row,checkpoint=None,*,start_paused=None,start_prologue=False):
         if self.monitor is not None or self.restore_future is not None:return
@@ -286,6 +300,10 @@ def run(folder:Path,*,paused=False):
         except BlockingIOError:
             root=tk.Tk();root.withdraw();messagebox.showinfo('Pokémon','Приложение уже открыто.',parent=root);root.destroy();return
         root=tk.Tk();application=Application(root,folder,paused=paused)
+        import os
+        if os.environ.get('POKEDESK_DESKTOP') == '1':
+            from .desktop import activate_startup
+            activate_startup()
         signal.signal(signal.SIGTERM,lambda *_:root.after_idle(application.quit));signal.signal(signal.SIGINT,lambda *_:root.after_idle(application.quit))
         root.mainloop()
 

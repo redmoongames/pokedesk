@@ -5,9 +5,13 @@ from .catalog import catalog,species,experience_reward
 from .mechanics import wild_mon,ranked_attacks,escape_info,incoming_risk
 
 STRATEGIES={'adaptive':'Автоматический выбор бойца','switch':'Слабый Pokémon · с помощниками','solo':'Сильный Pokémon · самостоятельно'}
-from .zones import SUPPORTED
 from .run_context import team_fingerprint,RunConfig
-ROUTES=SUPPORTED
+def __getattr__(name):
+    if name == 'ROUTES':
+        from .engine import ROOT
+        return routes_for(ROOT)
+    raise AttributeError(name)
+
 def routes_for(root):
     from .zones import zone_spec
     return tuple(zone_spec(root)['zones'])

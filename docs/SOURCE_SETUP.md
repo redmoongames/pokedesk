@@ -1,139 +1,147 @@
-# Source and private installation
+# Building and verifying PokéDesk
 
-There are two distinct inputs:
+Players should use the [prebuilt Mac release](https://github.com/redmoongames/pokedesk/releases/tag/v0.1.0-beta.1).
+The DMG needs no Terminal, system Python, CUDA or standalone mGBA installation.
+It contains no game cartridge, save, prepared state or game-art pack.
 
-1. A clean source export for code review, contribution, public contracts and
-   Python packaging. It contains no game resources or user data.
-2. A private playable installation with a compatible native bridge/core, bundled
-   Python/Tk, user-supplied ROMs, reference packs and optional local fixtures.
+## Public source checks
 
-The existing application supports Apple Silicon macOS. Passing pure contracts
-on Linux does not mean the macOS GUI, Cocoa input, audio or native bridge run on
-Linux. An editable Python install supplies source code; it does not install the
-missing game/runtime/resource packs.
-
-## Source checks
-
-Run `python3 -B tools/public_checks.py`. The command runs the ROM-free public
-contracts and verifies a fresh source export in a temporary directory. It never
-opens an emulator or reads a save. Public CI additionally builds and inspects a
-wheel and sdist from a disposable export copy.
-
-## Private integration checks
-
-The full unittest suite expects native libraries and version-specific vendor
-references. `tools/check.py` additionally expects `tests/fixtures/fire_red`, a
-matching ROM, a manifest and its deterministic checkpoints. Those files are
-intentionally excluded from the public export. This stage does not yet provide
-a resource-free fixture generator or a complete clean-machine game bootstrap.
-
-Do not copy a personal profile into public fixtures. Keep native fixtures and
-their output in private directories. Use Check.command only from a prepared
-private installation and keep output private.
-
-`native/build.py --adapter-only` rebuilds the bridge using the local pinned mGBA
-source archive and a pre-existing core dylib. Rebuilding the entire core/runtime
-and producing a signed, downloadable app remain later release work. See
-THIRD_PARTY_NOTICES.md before distributing any resource pack or binary bundle.
-
-## Packaging without data
-
-README.github.md documents the export/build/verify commands. The export destination
-must be new and outside the working installation; no existing directory is
-overwritten. The generated SOURCE_EXPORT.json records payload hashes, without
-personal absolute paths. Keep that verified export unchanged and build from a
-copy. Package metadata is allowed only in narrow generated namespaces; source
-payload bytes must match the export.
-
-The exporter is not a publisher and does not create a remote repository, upload
-files or delete anything from the working installation. A successful scan is
-not a substitute for reviewing the source and resource licensing before release.
-
-## Local reference-pack preparation
-
-Before gameplay on a prepared installation, run:
+Use Python 3.12 or 3.13:
 
 ```sh
-python3 -B tools/build_reference.py --project PRIVATE_INSTALL
-python3 -B tools/build_reference.py --project PRIVATE_INSTALL --check
+python3 -B tools/public_checks.py
 ```
 
-This explicit maintenance command needs the locally provided vendor inputs. It
-compiles one pack per edition, writes only vendor/catalog/packs, and never opens
-a ROM, save or journal. Packs remain private resource artifacts and are excluded
-from source exports. Runtime reads do not build missing/outdated packs or write
-SQLite. Old profile databases are preserved, including legacy reference tables.
-Restart the application after updating code or packs.
+These synthetic contracts need no game resources. They are distinct from native
+integration and interactive macOS tests. Wheel/sdist are developer packages;
+installing a wheel alone is not equivalent to downloading the `.app`.
 
-Profiles and jobs record relative links in .pokedesk-paths.json. Keep the portable
-folder tree intact when copying it to another M-series Mac. No absolute home
-paths are written into these markers. Legacy roots and existing symlink-based
-profiles continue to work without moving their saves. For a separately installed
-read-only app, configure a writable library using bind_installation(library,
-installation, kind='profile', library=library); all descendants inherit the app
-resource root and retain their own Data and Sessions. ROMs remain user-provided
-profile/library data. Resources and runtime dependencies are still the private
-installation's responsibility, as described above.
+## Rebuild the Mac application
 
-## What to obtain separately
+Build host: Apple Silicon macOS 13+ with Apple's Command Line Tools and Python
+3.12+. These are developer requirements; they are not player requirements.
 
-For source checks, use Python 3.12 or 3.13 from
-https://www.python.org/downloads/macos/ and Git (Apple Command Line Tools), or
-download this repository as a ZIP. No ROM or emulator is needed for those checks.
-
-For gameplay, the current private installation additionally needs:
-
-- An English ROM revision listed in src/pokemon_red/editions.py, supplied by the
-  player. FireRed's primary path is Data/FireRed.gba (16 MiB, SHA-1
-  dd5945db9b930750cb39d00c84da8571feebf417).
-- Native arm64 native/mgba_libretro.dylib and native/libpokemon.dylib with the
-  compatible mCore ABI. The pinned source is
-  https://github.com/mgba-emu/mgba/tree/7a12d6d4b9acb14c0ae62c9166b6a2f3d08007f6 .
-  Apple's Command Line Tools are needed for native/build.py. A standalone mGBA
-  application download is not a replacement for this prepared ABI/core pair.
-- The bundled Python/Tk tree at
-  runtime/python/cpython-3.12.16-macos-aarch64-none, including libpython3.12.dylib.
-  A system Python installation alone does not satisfy that portable layout.
-- Edition symbols and reference/navigation inputs under vendor/reference and
-  vendor/catalog, plus explicitly compiled vendor/catalog/packs. Symbols were
-  sourced from https://github.com/40Cakes/pokebot-gen3 and reference material from
-  https://github.com/PokeAPI/pokeapi and pret projects; see THIRD_PARTY_NOTICES.md.
-  The complete prepared pack and its clean-machine generator are not public yet.
-- Optional local artwork under assets; sprite files are not redistributed here.
-
-There is currently no public download for a complete playable dependency pack.
-Do not present these upstream links as a tested one-command installation recipe.
-If you already have a prepared private installation, keep its complete folder
-and backups, use its normal launcher, or pass its path explicitly:
+1. Download `pokedesk-dependencies-macos-arm64.tar.gz` and `SHA256SUMS.txt` from
+   [v0.1.0-beta.1](https://github.com/redmoongames/pokedesk/releases/tag/v0.1.0-beta.1).
+   Compare the downloaded archive's SHA-256 with the published checksum.
+2. Unpack the archive, which contains `pokedesk-dependencies/`.
+3. Run from the source checkout:
 
 ```sh
-.venv/bin/pokedesk --root PATH_TO_PRIVATE_INSTALLATION
+python3 -B tools/build_macos.py \
+  --dependencies /path/to/pokedesk-dependencies \
+  --output build/macos-beta \
+  --version 0.1.0-beta.1
 ```
 
-Installing the source-only wheel does not install these resources. Importing a
-ROM does not generate them. A missing native library, reference pack or runtime
-means the private setup is incomplete; do not download arbitrary replacement
-binaries or overwrite save data to work around the error.
+The output directory must be new. The builder verifies every dependency hash,
+checks adapter-source compatibility, uses an allowlisted source selection and
+includes only runtime code, explicitly reviewed setup seeds and dependency
+notices. It rejects ROM/save files, external/broken links and nonportable native
+link dependencies. `codesign --verify --deep --strict` checks the final envelope.
+It never reads `Data`, `Profiles`, `Sessions`, `ROMs`, `templates` or an installed
+playthrough as build inputs.
 
-Connecting a ROM uses an already prepared edition pack and writes only to the
-user library. Installing a missing resource pack remains explicit maintenance.
+The result is ad-hoc signed. Public distribution without a first-opening macOS
+exception requires the maintainer's Apple Developer ID signing and notarization;
+those credentials are not part of the repository. Do not disable Gatekeeper.
 
-## Code updates and running jobs
+To re-audit an existing application:
 
-Ordinary launch freezes the prepared installation under the writable library's
-Sessions/installations/<content-id> and restarts into that copy before opening
-the UI/core. Running games and their workers keep this version, including lazy
-imports; restart normally to activate updated source/resources. The first launch
-of a version must hash/copy resources and can take longer. Subsequent startup
-verifies the retained copy. Warm job launch does not rescan the installation.
-Do not remove retained versions while a game or resumable job uses them; cache
-garbage collection is future work. APFS clones share physical storage until
-modified; other filesystems can require a full copy per version.
+```sh
+python3 -B tools/build_macos.py --audit /path/to/PokeDesk.app
+```
 
-Saves, autosaves, journals and ROMs stay in their existing profile/library paths,
-outside the versioned copy. Copy Sessions with the rest of the portable tree to
-preserve resumable jobs. Custom scripts capture their local Python helpers;
-arbitrary external files are still the script author's responsibility. Scripts
-are trusted executable code, not sandboxed plugins. Direct embedding/debug
-imports should bootstrap a pinned process before creating Game/UI if they need
-the same host-update isolation as the normal launcher.
+## Rebuild dependencies and the adapter
+
+The release also provides `mgba-7a12d6d-source.tar.gz`, corresponding to mGBA commit
+`7a12d6d4b9acb14c0ae62c9166b6a2f3d08007f6`. Prebuilt regression test cartridges and
+cinema captures are omitted; all emulator core source is retained. The adapter
+build applies its two documented lockstep patches to the extracted source.
+
+The pinned core is the official Libretro Apple Silicon mGBA binary, SHA-256:
+`54ae92e80b012013f6d777fb3158b9f925be22c97896049b8549614d7514f505`.
+It is included in the dependency archive, with MPL and third-party notices.
+An arbitrary standalone mGBA installation is not ABI-compatible by assumption.
+
+Python is the upstream `python-build-standalone` distribution:
+
+- CPython 3.12.16, build 20261026, aarch64-apple-darwin, pgo+lto full archive.
+- [Pinned upstream download](https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.12.16%2B20261026-aarch64-apple-darwin-pgo%2Blto-full.tar.zst).
+- SHA-256: `016758f4881e5f71d63eddfbcdd53f25c5a9152435a863e4dc0770758eae32c3`.
+
+```sh
+python3 -B tools/prepare_macos_dependencies.py \
+  --python-archive /path/to/python-full.tar.zst \
+  --core /path/to/pokedesk-dependencies/native/mgba_libretro.dylib \
+  --mgba-source /path/to/mgba-7a12d6d-source.tar.gz \
+  --output build/dependencies
+```
+
+This checks pinned Python/core hashes, retains runtime dependency notices,
+removes developer-only static libraries, package managers and stdlib test data,
+and compiles the adapter from the current `native/` source. The manifest records
+source and output hashes. The existing core remains a pinned prebuilt dependency;
+this recipe does not claim a bit-identical source rebuild of the upstream core.
+
+## First-run architecture
+
+`native/app_launcher.m` keeps the `.app` process identity. Before initializing
+Python/Tk, it selects either the bundled setup runtime or the pinned runtime from
+the local installation receipt. Tk must create its own TKApplication subclass
+before any activation request.
+
+On first launch `desktop.py` asks for a supported English FireRed Rev 1 ROM.
+`desktop_install.py` validates it and performs setup off the UI thread under an
+exclusive library/application lock. `rom_resources.py` extracts catalogs,
+encounters, trainer parties/names and sprites from the user's cartridge. Setup
+uses a disposable core without loading an existing save; readers never rebuild
+resources implicitly.
+
+Code, native libraries, runtime and generated resources are frozen together in a
+local installation. Only after verification are the relative profile link and
+commit receipt published. Failed/cancelled preparation keeps the previous
+selection. A damaged cache is repaired in a fresh namespace without replacing
+code held by existing jobs. No save bytes are rewritten by this transaction.
+
+A native-loader restart finishes setup while preserving the application bundle
+identity; it does not turn the GUI into an unrelated Python application. Every
+session/job still uses the pinned installation and existing safety epochs. Spawned
+analytics workers also re-import the pinned main.py, not an updateable app bootstrap.
+
+## Test a built app using your own save
+
+The developer verifier deliberately requires a **new disposable work directory**:
+
+```sh
+python3 -B tools/check_macos_release.py \
+  --app /path/to/PokeDesk.app \
+  --rom /path/to/your/FireRed.gba \
+  --state /path/to/your/FireRed.state \
+  --save /path/to/your/FireRed.sav \
+  --work /path/to/new-disposable-directory
+```
+
+It copies inputs, prepares resources with the bundled runtime, runs the pinned
+core and a cancellable observation bot, checks autosave during automation,
+measures revocation acknowledgement at 16×, accepts later manual input, closes
+through durability barriers and cold-loads the save. It checks the original
+ROM/state/save hashes at the end. It does not replace interactive testing or
+claim that every route/story event is supported.
+
+The historical full integration suite additionally requires locally prepared
+multi-edition fixtures. Do not skip missing fixtures and report a complete pass.
+Use private temporary Data for every native test.
+
+## User data and legacy installations
+
+The Finder build defaults to `~/Library/Application Support/PokeDesk/`.
+**File → Open saves folder** opens it. Back up/copy the whole folder while the app
+is closed, including its local ROM and pinned versions. Relative links preserve
+portability between M-series Macs; app updates do not move profile contents.
+`POKEDESK_LIBRARY` is an optional developer override for isolated launch tests.
+
+A legacy portable project remains separate and is not silently migrated. Back it
+up in full before importing anything. A source command can still select an
+already prepared legacy installation using `pokedesk --root /path/to/project`.
+Never upload a working data folder or attach ROMs/saves to an issue.

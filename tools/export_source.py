@@ -23,7 +23,7 @@ import zlib
 MANIFEST = 'SOURCE_EXPORT.json'
 LIMIT = 2 * 1024 * 1024
 SCREENSHOTS = {'docs/screenshots/party.png', 'docs/screenshots/training.png',
-               'docs/screenshots/encounters.png'}
+               'docs/screenshots/encounters.png', 'docs/screenshots/game.png'}
 FORBIDDEN = {'data', 'profiles', 'sessions', 'roms', 'templates', 'runtime',
              'assets', 'vendor', 'checkpoints', 'fixtures', 'pokemon.app'}
 PRIVATE = re.compile(r"/(?:Users|home)/[^/\s\"']+/|/var/(?:folders)/|[A-Z]:\\Users\\[^\\\s]+\\")

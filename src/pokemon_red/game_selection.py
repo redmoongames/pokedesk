@@ -2,7 +2,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from . import localized_tk as tk
 from .localized_tk import filedialog
-from .editions import EDITIONS,available,install_rom
+from .editions import EDITIONS,available,install_rom,selectable_editions
 from .ui import BG,CARD,TEXT,MUTED,AMBER,GREEN,Button,Segments,Toggle,Select,Stepper,label
 from .scrolling import Scrollbar
 from .i18n import t,literal,format_number
@@ -29,7 +29,8 @@ class NewGameDialog:
         body=tk.Frame(self.canvas,bg=BG,padx=20,pady=16);item=self.canvas.create_window(0,0,window=body,anchor='nw');body.bind('<Configure>',lambda _:self.canvas.configure(scrollregion=self.canvas.bbox('all')));self.canvas.bind('<Configure>',lambda e:self.canvas.itemconfigure(item,width=e.width))
         label(body,'Выберите игру',19,bold=True);self.game=tk.StringVar(value='firered')
         for keys in (('firered','leafgreen'),('ruby','sapphire')):
-            Segments(body,[(k,EDITIONS[k].name) for k in keys],self.game,lambda _:self.refresh()).pack(fill='x',pady=(8,0))
+            choices=[(k,EDITIONS[k].name) for k in keys if k in selectable_editions(self.home.folder)]
+            if choices:Segments(body,choices,self.game,lambda _:self.refresh()).pack(fill='x',pady=(8,0))
         label(body,'У каждого прохождения своё сохранение. Выбранная игра закрепляется за ним; имеющиеся прохождения сохраняются.',11,MUTED,wraplength=550).pack_configure(pady=(4,12))
         self.support=label(body,'',11,MUTED,wraplength=550)
         self.import_button=Button(body,'Подключить локальный ROM…',self.import_file,variant='ghost');self.import_button.pack(anchor='w',pady=6)

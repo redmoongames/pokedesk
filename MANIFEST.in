@@ -32,3 +32,8 @@ include tools/benchmark_analytics.py
 include tools/build_reference.py
 include tools/benchmark_reference.py
 include tools/benchmark_installations.py
+
+include desktop_main.py native/app_launcher.m tools/build_macos.py
+recursive-include src/pokemon_red/release_data *.json *.sym *.txt
+include tools/prepare_macos_dependencies.py
+include tools/check_macos_release.py docs/RELEASE_VALIDATION.md docs/screenshots/game.png

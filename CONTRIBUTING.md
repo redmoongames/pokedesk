@@ -1,44 +1,49 @@
 # Contributing
 
-Start with Python 3.12+ and `python3 -B tools/public_checks.py`. This public gate
-uses synthetic data and does not need ROMs, Tk windows, a native core or a live
-profile. It deliberately reports its limited scope.
+Start with Python 3.12/3.13 and `python3 -B tools/public_checks.py`. This public
+gate uses synthetic data and requires no ROM, Tk window, native core or profile.
+It reports its limited scope. Do not treat a source-check pass as a game pass.
 
-## Runtime changes
+## Runtime and safety changes
 
-Read AGENTS.md before editing runtime code. Every Game belongs to its creating
-owner thread. UI callbacks use detached models and asynchronous commands. F9/Esc
-revocation must bypass ordinary queues. Never combine frames across safety,
-cancellation, learning or save barriers.
+Read [AGENTS.md](AGENTS.md) and [architecture](docs/architecture.md) first.
+Every Game belongs to its creating owner thread. UI callbacks consume detached
+models and asynchronous commands. F9/Esc revocation bypasses ordinary queues.
+Never batch frames across safety, cancellation, learning or save barriers.
 
-Use a private temporary Data directory for all game integration tests. Never
-replace a live save with a fixture. Do not run untrusted automation scripts:
-they are ordinary Python programs with the current user's filesystem rights.
+Add a regression test for the actual boundary being changed. Keep formatting
+changes separate from behavior changes. Preserve save ordering, rollback,
+checksum checks, stale-generation rejection and manual takeover. A cancelled
+start or candidate adoption must never publish late.
 
-On a prepared private installation, runtime changes also require:
+Use private disposable copies for native checks. The public Mac builder and
+`tools/check_macos_release.py` are documented in [SOURCE_SETUP.md](docs/SOURCE_SETUP.md).
+They let a contributor test a built app using their own supported ROM and save,
+without redistributing either. The full historical integration suite additionally
+requires locally prepared multi-edition fixtures; on a fixture-equipped checkout
+run `python3 -B -m unittest discover -s tests`. Missing fixtures are not passes.
+Legacy `Run.command`/`Check.command` launchers belong to prepared private layouts,
+not to the Finder app's player installation instructions.
 
-```sh
-./runtime/python/cpython-3.12.16-macos-aarch64-none/bin/python3 -B \
-  -m unittest discover -s tests
-./Check.command
-```
+## Releases and user data
 
-The full regression runner needs privately prepared ROM/state fixtures. Its
-`--quick` and `--cases` options are diagnostic profiles, not complete performance
-gates. Do not silently skip missing integration assets and call the result a
-full validation. See docs/SOURCE_SETUP.md for the remaining build limitations.
+The application builder takes clean allowlisted source plus pinned, checksummed
+dependencies. A playable private project is never a build input. Review resources
+and provenance before adding anything to `release_data`; no game dialogue,
+graphics, executable game bytecode, ROM catalog dumps or personal state belongs
+there. Existing seeds are functional/factual metadata and authored explanations;
+ROM catalogs, sprites and encounter tables are compiled locally at first run.
 
-## Reviews and data
+Never commit ROMs, saves, prepared states, profiles, logs or generated resource
+packs. Export with `tools/export_source.py`, verify built source packages, audit
+the `.app`, and inspect release archives before publishing. The allowlist is
+independent of `.gitignore`. Keep dependency notices and corresponding mGBA source
+available with binary releases. Document signing/notarization status accurately.
 
-Keep formatting-only changes separate from behaviour changes. Add a regression
-test for a meaningful bug, then test the actual boundary involved. Preserve
-save ordering, rollback, checksum validation, stale-generation rejection and
-manual takeover. Cancellation must never permit a late candidate adoption.
+## Licensing
 
-Do not commit ROMs, saves, states, profiles, logs, private benchmark outputs or
-resource packs. Export using tools/export_source.py and verify both the source
-folder and built artifacts. The allowlist is independent of .gitignore.
-
-Original contributions are made under the project's Apache 2.0 license. Preserve
-third-party licensing and attribution; do not copy code or datasets into this
-license without checking their terms and documenting provenance.
+Original contributions are under Apache 2.0. Third-party components retain their
+licenses and attribution; the symbol-reference seed is GPL-3.0, mGBA-covered
+files are MPL-2.0, and runtime dependencies have their own notices. Do not relabel
+third-party material as Apache code. Bot scripts are trusted local programs, not
+a sandbox; do not run untrusted scripts to review a contribution.

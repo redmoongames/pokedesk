@@ -38,7 +38,26 @@
     "tools/benchmark_analytics.py",
     "tools/build_reference.py",
     "tools/benchmark_reference.py",
-    "tools/benchmark_installations.py"
+    "tools/benchmark_installations.py",
+    "desktop_main.py",
+    "native/app_launcher.m",
+    "tools/build_macos.py",
+    "src/pokemon_red/release_data/dex_availability.json",
+    "src/pokemon_red/release_data/effect_names.json",
+    "src/pokemon_red/release_data/grind_zones.json",
+    "src/pokemon_red/release_data/heal_locations.json",
+    "src/pokemon_red/release_data/item_articles.json",
+    "src/pokemon_red/release_data/location_reference.json",
+    "src/pokemon_red/release_data/map_groups.json",
+    "src/pokemon_red/release_data/move_articles.json",
+    "src/pokemon_red/release_data/pokefirered_rev1.sym",
+    "src/pokemon_red/release_data/region_map.json",
+    "src/pokemon_red/release_data/world_topology.json",
+    "src/pokemon_red/release_data/PROVENANCE.txt",
+    "tools/prepare_macos_dependencies.py",
+    "tools/check_macos_release.py",
+    "docs/RELEASE_VALIDATION.md",
+    "docs/screenshots/game.png"
   ],
   "trees": [
     {

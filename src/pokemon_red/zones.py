@@ -14,4 +14,9 @@ def zone_spec(root=ROOT):
 
 def zone_label(key,root=ROOT):return zone_spec(root)['zones'][key]['label']
 
-SUPPORTED=tuple(source_spec()['zones'])
+def __getattr__(name):
+    # Compatibility for scripts importing SUPPORTED. Importing the module must
+    # not read game resources before the first-run compiler has prepared them.
+    if name == 'SUPPORTED':
+        return tuple(source_spec()['zones'])
+    raise AttributeError(name)

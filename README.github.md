@@ -1,59 +1,135 @@
-# PokéDesk
+# PokéDesk — Pokémon FireRed for Mac, with automation
 
 [![Source checks](https://github.com/redmoongames/pokedesk/actions/workflows/ci.yml/badge.svg)](https://github.com/redmoongames/pokedesk/actions/workflows/ci.yml)
+[![macOS 13+ · Apple Silicon](https://img.shields.io/badge/macOS%2013%2B-Apple%20Silicon-black.svg)](https://github.com/redmoongames/pokedesk/releases/tag/v0.1.0-beta.1)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
-[![macOS · Apple Silicon](https://img.shields.io/badge/macOS-Apple%20Silicon-black.svg)](docs/SOURCE_SETUP.md)
 
-A local desktop companion for Pokémon Gen III: play in one window, inspect your
-party in another, and run Python automation against the live emulator session.
+Play Pokémon FireRed in a dedicated game window. Inspect your party, train toward
+a target level, search for Pokémon with preferred IVs/natures, or write Python
+scripts that control the running game. **F9 takes control back from the bot.**
 
-[Русская инструкция](docs/README.ru.md) · [Setup](docs/SOURCE_SETUP.md) ·
-[Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+**[Download for Mac with an M chip](https://github.com/redmoongames/pokedesk/releases/download/v0.1.0-beta.1/PokeDesk-0.1.0-beta.1-macos-arm64.dmg)** ·
+[Русская инструкция](docs/README.ru.md) · [Release notes](https://github.com/redmoongames/pokedesk/releases/tag/v0.1.0-beta.1) · [Build from source](docs/SOURCE_SETUP.md)
 
-**Status: source preview.** The private playable installation targets Apple
-Silicon Macs. This repository contains the application source and native adapter
-source, but **does not yet include a complete clean-machine installer**. Cloning
-it and adding a ROM is not enough to play. Python packages built here are source
-packages, not a bundled emulator application.
+**Public beta.** The app bundles Python/Tk and mGBA; no Terminal, Homebrew, CUDA,
+external emulator, API key or cloud account is needed to play. Supply your own
+supported cartridge. The app is ad-hoc signed, **not Apple-notarized**; the first
+opening may require the macOS steps below.
 
-## What it does
+## Start playing
 
-- **Party and collection:** HP/XP, types, statuses, moves, evolutions and reference views.
-- **Training:** route and party selection, healing, move/evolution decisions, and cycle history.
-- **Encounter search:** species, gender, shiny and stat preferences; optional exact IVs,
-  timed searches, ranked candidates and parallel search workers.
-- **Python scripting:** control the current session through the SDK, with guarded input
-  and **F9 manual takeover**.
-- **Save handling:** separate playthroughs, slots, autosaves, rollback checkpoints and history.
-- **Local execution:** emulator ownership stays off the UI thread; jobs pin their code,
-  Python, native libraries and references so source updates do not change active runs.
+1. Download the DMG, open it, and drag **PokeDesk.app** into **Applications**.
+2. Open PokéDesk and click **Choose ROM…**. Select your English **FireRed Rev 1**
+   `.gba` file. The app checks it and prepares local references and pixel sprites.
+3. Click **Begin**, or choose **File → Continue / Begin**. Use **+ New playthrough**
+   for a separate adventure; intro skipping and starter search are optional.
 
-Automation depends on the edition, supported maps and current story progress.
-FireRed is the main validation path. LeafGreen, Ruby and Sapphire adapters are
-also present; this does not imply every map or event is covered. ROM hacks and
-arbitrary revisions are not supported.
+If macOS blocks the app, first try opening it, then use **System Settings →
+Privacy & Security → Open Anyway** for PokéDesk if you trust this release.
+[Apple explains this first-opening flow](https://support.apple.com/en-us/102445).
+No command-line security changes are required. Managed Macs may prohibit this.
 
-## Screenshots
+Requirements: **Apple Silicon (M-series), macOS 13 or newer**, and a supported ROM.
+Intel Macs, Windows and Linux are not supported by this binary release. Support
+is based on the architecture/deployment target and local testing, not a test on
+every macOS release or every M-series model.
 
-Real application windows from a disposable demo session. The images show setup
-screens; they do not represent a running search or a measured training result.
+## What it looks like
 
-<p align="center"><img src="docs/screenshots/party.png" width="520" alt="PokéDesk party: Pokémon types, HP, XP and levels"></p>
+The game has its own window; the trainer panel and encounter/battle context open
+beside it. These are actual game/interface images from disposable local sessions.
+
+<p align="center"><img src="docs/screenshots/game.png" width="480" alt="Pokémon FireRed running in the PokéDesk emulator"></p>
+<p align="center"><img src="docs/screenshots/party.png" width="460" alt="Trainer panel with Pokémon sprites, types, HP, XP and levels"></p>
 
 | Training setup | Encounter search |
 | --- | --- |
-| <img src="docs/screenshots/training.png" width="420" alt="Automatic training with route selection, target level and move plan"> | <img src="docs/screenshots/encounters.png" width="340" alt="Encounter search with shiny, gender, stat priorities and time budget"> |
+| <img src="docs/screenshots/training.png" width="400" alt="Choose a Pokémon, target level and move plan for automatic training"> | <img src="docs/screenshots/encounters.png" width="320" alt="Timed Pokémon search with gender, shiny and stat priorities"> |
 
-Game artwork visible in screenshots belongs to its respective rights holders.
-Screenshots are documentation, not a game resource pack, and are not covered by
-the license for the application's original code.
+The setup screenshots are not measured training/search results. Some secondary
+reference text is still being localized. Game artwork belongs to its respective
+rights holders; screenshots are documentation, not a distributable game pack.
 
-## Download and check the source
+## Your cartridge
 
-Download Python **3.12 or 3.13** from [python.org](https://www.python.org/downloads/macos/)
-for the tested public-check environment. Git can be obtained through Apple's
-Command Line Tools (`xcode-select --install`), or use **Code → Download ZIP** here.
+A **ROM** is a digital copy of a cartridge. Choose an unpacked **`.gba`** file;
+`.sav` is a save file, and a ZIP archive is not a cartridge.
+
+This release supports **Pokémon FireRed, English USA/Europe revision 1 (v1.1)**:
+
+- Size: **16 MiB / 16,777,216 bytes**.
+- SHA-1: `dd5945db9b930750cb39d00c84da8571feebf417`.
+- The app checks the header, revision, size and full hash automatically.
+- Translations, ROM hacks, other revisions and LeafGreen ROMs are rejected.
+
+Supply a cartridge image yourself; no Pokémon ROMs or saves are included here.
+For example, a compatible cartridge reader and
+[FlashGBX](https://github.com/lesserkuma/FlashGBX) can back up your own GBA
+cartridge. A reader produces a ROM file, not a PokéDesk dependency installer.
+
+PokéDesk makes a private local ROM copy and extracts game tables and small sprites
+from it during setup. **The ROM is never uploaded.** Preparation works offline.
+
+## Controls
+
+| Action | Default keys |
+| --- | --- |
+| Move | Arrow keys or WASD |
+| GBA A / confirm | X or E |
+| GBA B / back | Z or Q |
+| Start | Enter |
+| Select | Right Shift |
+| Pause / resume | Space; 0 sets zero speed |
+| Stop the bot and take control | **F9** |
+| Stop and pause | Escape |
+
+On Macs using media keys, use **Fn/Globe + F9** if needed. Buttons have up to two
+physical-key bindings, independent of the keyboard layout. Change them and the
+0–9 speed presets in **Settings**. Sound is off by default.
+
+## Train, search, inspect
+
+- **Party → Auto Train:** choose your Pokémon and target level. Review the route,
+  team and move/evolution decisions, then start. Progress includes XP per real
+  minute and completed healing-to-healing cycles.
+- **Pokémon → Auto Catch:** choose a species, shiny/gender preferences, stat
+  priorities and a time budget. Optional exact IV goals and parallel workers
+  help compare ranked candidates. Adopting an earlier candidate can roll back
+  later progress; the app asks before a destructive rollback.
+- **Party and references:** pixel sprites, HP/XP, status, types, moves, evolution
+  conditions, collection and encounter information.
+- **Python scripts:** run against the live session using the bundled SDK.
+  Scripts are trusted local code with your user permissions, not a sandbox.
+
+Automation is guarded, not universal. Reachability depends on story progress,
+field moves and reviewed transitions. Unexpected story/dialogue states can hand
+control back. Prepared donor saves and item-delivery templates are not included.
+FireRed is the supported binary target; other edition adapters remain in source.
+
+## Saves, updates and moving to another Mac
+
+The app and your data are separate. User data is stored in:
+
+`~/Library/Application Support/PokeDesk/`
+
+Use **File → Open saves folder** to find it without Terminal. Back up the **whole
+folder**: it contains the local ROM, playthroughs, slots, autosave history and
+pinned installations for resumable jobs. Normal app updates replace the `.app`,
+not this folder. Setup never rewrites existing save bytes.
+
+Autosave defaults to every **5 seconds of active real gameplay**. Pausing and
+quitting preserve the existing save barriers; normal Quit waits for the final
+save. Keep a separate backup for disk failure. Old pinned installation caches are
+retained for resumable jobs; automatic cache collection is not implemented yet.
+
+To move to another M-series Mac, install PokéDesk there and copy the complete
+`PokeDesk` data folder to its corresponding Application Support folder while both
+apps are closed. Relative profile/job links stay portable. Files from an older
+private project installation stay where they are; installing this app does not
+silently move or delete them. Source-build and legacy-data details are in
+[setup](docs/SOURCE_SETUP.md).
+
+## Development and verification
 
 ```sh
 git clone https://github.com/redmoongames/pokedesk.git
@@ -61,87 +137,20 @@ cd pokedesk
 python3 -B tools/public_checks.py
 ```
 
-This checks public contracts and verifies a fresh, allowlisted source export.
-It needs no ROM, save, Tk window or native emulator. The public GitHub Actions
-workflow checks these contracts and builds/verifies wheel and sdist artifacts
-on Linux and macOS. It does not run the complete game integration suite.
+Python **3.12 or 3.13** is the tested source-check environment. The public checks
+need no ROM and cover contracts, export policy and packaging boundaries; they do
+not claim complete native game integration. The reproducible macOS builder uses
+a pinned, checksummed dependency archive, documented in [SOURCE_SETUP.md](docs/SOURCE_SETUP.md).
 
-Optional editable source installation:
+See [Architecture](docs/architecture.md), [Contributing](CONTRIBUTING.md) and
+[release validation](docs/RELEASE_VALIDATION.md). The emulator has one owner
+thread; F9 bypasses the normal queue, and saves use ordered durable writes.
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -e .
-.venv/bin/pokedesk --help
-```
+## License
 
-## Run the game
-
-You need a **separately prepared, compatible private PokéDesk installation**.
-There is currently no public download for the complete resource/runtime pack.
-The required components and their sources are listed in [setup](docs/SOURCE_SETUP.md):
-
-| Required locally | Included here? |
-| --- | --- |
-| Your own supported English game ROM | No |
-| Compatible mGBA core and this project's native bridge | Adapter source only |
-| Bundled Apple Silicon Python/Tk runtime | No |
-| Edition-specific symbols and compiled reference/navigation packs | No |
-| Optional sprites and private integration fixtures | No |
-
-The native bridge is tied to a pinned [mGBA](https://github.com/mgba-emu/mgba)
-ABI. Installing the standalone mGBA or RetroArch application does not supply a
-compatible PokéDesk installation. `native/build.py` rebuilds the adapter against
-an already prepared core; it is not a complete dependency installer.
-
-On a prepared installation, preserve the whole portable folder, including its
-runtime and resources, and use its normal launcher. A source-installed command
-can select that installation explicitly:
-
-```sh
-.venv/bin/pokedesk --root PATH_TO_PRIVATE_INSTALLATION
-```
-
-FireRed's primary supported ROM is **English USA/Europe revision 1**, 16 MiB,
-SHA-1 `dd5945db9b930750cb39d00c84da8571feebf417`. The prepared installation expects
-it at `Data/FireRed.gba`. Other edition revisions are defined in
-[src/pokemon_red/editions.py](src/pokemon_red/editions.py). Obtain ROMs yourself;
-this project provides neither ROM downloads nor ROM download instructions.
-
-Start with a separate playthrough, choose a Pokémon in **Party → Train**, or
-open encounter search from a species page. Review the plan before starting.
-Press **F9** to take control back. Input and speed hotkeys can be edited in Settings.
-Custom scripts run as ordinary trusted Python programs with your user permissions.
-
-## Save and update boundaries
-
-`Data`, `Profiles` and `Sessions` are private local data. Back them up with the
-portable installation. Version snapshots live under `Sessions/installations`;
-restart normally to activate a code update. Old versions are retained for active
-and resumable jobs; automatic cache collection is not implemented yet.
-
-The repository and package export deliberately exclude ROMs, saves, prepared
-states, journals, logs, extracted references, runtime/native binaries and sprite
-packs. Documentation screenshots are a narrow, explicit exception for images.
-Do not upload a working installation as a repository or attach it to an issue.
-
-## Development
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before changing
-runtime or safety code. The core has one owner; F9 uses a separate revocation
-path; saves are published through ordered durability barriers.
-
-Source export, package verification, reference preparation and private integration
-checks are documented in [setup](docs/SOURCE_SETUP.md). Full integration tests
-require local native libraries, reference packs, a supported ROM and private
-fixtures. Missing resources are not a successful game validation.
-
-## License and credits
-
-Original PokéDesk code is licensed under [Apache 2.0](LICENSE). This permissive
-license includes an explicit patent grant; its authoritative terms are in the
-[Apache license text](https://www.apache.org/licenses/LICENSE-2.0).
-[NOTICE](NOTICE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) document
-third-party boundaries. mGBA and other dependencies retain their own licenses.
-
-Pokémon ROMs, game data, artwork and trademarks are not licensed by this project.
-PokéDesk is independent and unaffiliated with Nintendo, Game Freak or The Pokémon Company.
+Original PokéDesk code: [Apache 2.0](LICENSE).
+[NOTICE](NOTICE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) describe the
+separate mGBA, symbol-reference and runtime licenses. Corresponding mGBA source
+and runtime notices accompany the release. Game ROMs, data, artwork and trademarks
+are not licensed by this project. PokéDesk is independent and unaffiliated with
+Nintendo, Game Freak or The Pokémon Company.

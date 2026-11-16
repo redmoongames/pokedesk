@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pokedesk"
-version = "0.1.0.dev0"
-description = "Local Gen III Pokémon session tools and guarded automation"
+version = "0.1.0b1"
+description = "Pokémon FireRed for Apple Silicon Macs with guarded automation"
 readme = "README.github.md"
 requires-python = ">=3.12"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "licenses/*.txt"]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 4 - Beta",
   "Programming Language :: Python :: 3",
   "Operating System :: MacOS :: MacOS X",
 ]
@@ -29,4 +29,4 @@ include = ["pokemon_red"]
 namespaces = false
 
 [tool.setuptools.package-data]
-pokemon_red = ["locales/en.json", "locales/ru.json", "locales/manifest.json"]
+pokemon_red = ["locales/en.json", "locales/ru.json", "locales/manifest.json", "release_data/*.json", "release_data/*.sym", "release_data/*.txt"]

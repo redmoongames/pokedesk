@@ -13,8 +13,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 1003,
-      "sha256": "a8fba8d30f7e787bc5edac72cd2224e849517273014619eaf56d34f0e2cf6c3c"
+      "bytes": 1032,
+      "sha256": "3628fd40d571ce27b79cfbc1a5b731d7b382274aefa698f3b1c4c86b306b505a"
     },
     {
       "path": "AGENTS.md",
@@ -58,8 +58,8 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 2056,
-      "sha256": "117147cfa53255a94ec002f7f6384bcce3957a77b85e8c40bc17ae85c0ed9a55"
+      "bytes": 2821,
+      "sha256": "c1eca43216f69701fcb3f8fcb6e7be39db4965909b1e3fd5673c77f2e873ddf4"
     },
     {
       "path": "LICENSE",
@@ -68,8 +68,8 @@
     },
     {
       "path": "MANIFEST.in",
-      "bytes": 1317,
-      "sha256": "f85a9aa2d5a5e59130e6091d95a2466726dbd3e38d6c9809e45eab093e932668"
+      "bytes": 1585,
+      "sha256": "5c6b22ef4f1cfea54d88cf5b243d04c385c4aea0990135d726f7790007baa09f"
     },
     {
       "path": "NOTICE",
@@ -78,28 +78,38 @@
     },
     {
       "path": "README.github.md",
-      "bytes": 7585,
-      "sha256": "00830adb97643a724657f92a499620c43013b12904f9b157c217f157ccd7383f"
+      "bytes": 8355,
+      "sha256": "bf49e8e2a8e3c6f1ddd0fe6799999c9d7e407d777494d655911b195f051ac9ae"
     },
     {
       "path": "README.md",
-      "bytes": 7585,
-      "sha256": "00830adb97643a724657f92a499620c43013b12904f9b157c217f157ccd7383f"
+      "bytes": 8355,
+      "sha256": "bf49e8e2a8e3c6f1ddd0fe6799999c9d7e407d777494d655911b195f051ac9ae"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 2492,
-      "sha256": "8b34ea6663d590cfeb56df6991841ade14731e672c0a86b141d2686a080ad837"
+      "bytes": 3018,
+      "sha256": "9595332394169b67082765bdf4ce2edac7da6720bd79a00e85e41ec6bf0f141c"
+    },
+    {
+      "path": "desktop_main.py",
+      "bytes": 1301,
+      "sha256": "dac52dff5495747aeb6415525eb4b46a77cc98b2e2c202f17671ce43ed9ed4fa"
     },
     {
       "path": "docs/README.ru.md",
-      "bytes": 7499,
-      "sha256": "60877ff516a1b017d5272a21cc5ecffd373ffd27dbb4dd0759d9b147c80b65a0"
+      "bytes": 6559,
+      "sha256": "43caeb8878b68557d8bb99c7706278d6f294530168b5742000224df091c6fa43"
+    },
+    {
+      "path": "docs/RELEASE_VALIDATION.md",
+      "bytes": 3685,
+      "sha256": "d9e5b7a75bba0abae924ebeb7e28280d040e44acd2a9a52eeb313b38c21d4838"
     },
     {
       "path": "docs/SOURCE_SETUP.md",
-      "bytes": 7578,
-      "sha256": "1213687df0be62753f97730fba7978c3b3beae5d76a9a047bc5a173e70feb3dc"
+      "bytes": 7070,
+      "sha256": "f525385d9e825f370f0ad8a33444bc978ccbee294cafc636f0bbd43d218b7f61"
     },
     {
       "path": "docs/architecture.md",
@@ -110,6 +120,11 @@
       "path": "docs/screenshots/encounters.png",
       "bytes": 400386,
       "sha256": "f470a60135993ab26e1fec72602b26b4a78acd6577618985ff3b18e03e31ab26"
+    },
+    {
+      "path": "docs/screenshots/game.png",
+      "bytes": 8133,
+      "sha256": "2e9e6ad49ac3b479a7fe429364347d3959c00c499d60289722cab8ce54946153"
     },
     {
       "path": "docs/screenshots/party.png",
@@ -142,6 +157,11 @@
       "sha256": "fe147b2bae23ee135b47dffd439c97c02f625800a8460d0844d4b86fc627791b"
     },
     {
+      "path": "native/app_launcher.m",
+      "bytes": 6730,
+      "sha256": "7a512bfa2dd97a5ce277212b670b4a66fd53ef62c8c6b96d2165e00a376b5362"
+    },
+    {
       "path": "native/bridge.c",
       "bytes": 6875,
       "sha256": "75a0ec0242941f015f358ba5ad00e9181fcb31a00b0c451e05415946c3ec9f5d"
@@ -168,8 +188,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 856,
-      "sha256": "9a7a4a72d38c12e9b0622927129a0bccc87ded30160997f07b61b836124d62a4"
+      "bytes": 923,
+      "sha256": "a58a9a7992dcd28479c2d1107e8785c2cd3eb13e31ceec6f9b0ade95d8e1cc60"
     },
     {
       "path": "src/pokemon_red/__init__.py",
@@ -347,6 +367,16 @@
       "sha256": "12933019c3ffbedaa799958a999030eb8b7b6f3dae96b8e3b2dab15e1baffe28"
     },
     {
+      "path": "src/pokemon_red/desktop.py",
+      "bytes": 8036,
+      "sha256": "7d7da7e5d80f4387f699ace5499ac122e902b23166d189de08004bba276c1e0c"
+    },
+    {
+      "path": "src/pokemon_red/desktop_install.py",
+      "bytes": 6888,
+      "sha256": "aecb858b93702f329f7bcd15a23f24058c3d6ee4a4a308b5841453739a98ee3f"
+    },
+    {
       "path": "src/pokemon_red/dex_reference.py",
       "bytes": 4304,
       "sha256": "b1670a9f7b683995bea280b2d514ba19071ad2b036155bdc6c021305fb777fd3"
@@ -358,8 +388,8 @@
     },
     {
       "path": "src/pokemon_red/editions.py",
-      "bytes": 4197,
-      "sha256": "5936b003a61e62877e6ecb9e276bb29c56e75885eba89d148cce691dcc232611"
+      "bytes": 4806,
+      "sha256": "01736253c5754a75da75d42c0f27ef37cfbc6204956cbb5c84e24af9cd2a4840"
     },
     {
       "path": "src/pokemon_red/encounter_capture.py",
@@ -463,8 +493,8 @@
     },
     {
       "path": "src/pokemon_red/game_selection.py",
-      "bytes": 9990,
-      "sha256": "db742bd34972a7565eca4f5a8de8a5394d46792656d792b906d464838fd67813"
+      "bytes": 10095,
+      "sha256": "7ca4a3d39ebee74f6f6ec3ed23887b6769a00a5dd70778474cee3a4ba954a931"
     },
     {
       "path": "src/pokemon_red/grass_search.py",
@@ -643,8 +673,8 @@
     },
     {
       "path": "src/pokemon_red/locales/en.json",
-      "bytes": 322025,
-      "sha256": "4cf6c8e168ce4989f85f735b9897c3bd8b93d7b22a0d1367180c188e3b99e044"
+      "bytes": 323484,
+      "sha256": "9fab294e07189af2ef6987ddf808509d7eeeac7c5ad2ba8668afa6ed371ba704"
     },
     {
       "path": "src/pokemon_red/locales/manifest.json",
@@ -653,8 +683,8 @@
     },
     {
       "path": "src/pokemon_red/locales/ru.json",
-      "bytes": 481457,
-      "sha256": "cd04337f5c13d5073cbfae4c93e4fe444dffa2b38513e6400b5abbe826ac2c37"
+      "bytes": 483592,
+      "sha256": "6514c94af5ad8937ca61d483e868a8da7b1e250e8310aae21bc7a9b0bc119d39"
     },
     {
       "path": "src/pokemon_red/localized_tk.py",
@@ -803,8 +833,8 @@
     },
     {
       "path": "src/pokemon_red/planning.py",
-      "bytes": 10213,
-      "sha256": "43ad5a81553e56a25e64caac61231ab5902afc14f495495f0c903272a14240f3"
+      "bytes": 10312,
+      "sha256": "5d723f8fec07878b393f3c2219f5ef11dd7d1f706f689a55f878c98842b5f3ac"
     },
     {
       "path": "src/pokemon_red/planning_service.py",
@@ -902,9 +932,74 @@
       "sha256": "293b06b0e8883f8b84dab86847c079426d498c67527399637b0d6028f94ae74b"
     },
     {
+      "path": "src/pokemon_red/release_data/PROVENANCE.txt",
+      "bytes": 1510,
+      "sha256": "8c7ea1df150c42aa334bcac28254c937680c284d8956a1abe6910254b496608c"
+    },
+    {
+      "path": "src/pokemon_red/release_data/dex_availability.json",
+      "bytes": 34807,
+      "sha256": "93e4bbc680c8ea23efff999cb602cd6d206c1920752290973dd79da101d5b904"
+    },
+    {
+      "path": "src/pokemon_red/release_data/effect_names.json",
+      "bytes": 5385,
+      "sha256": "10309fade546efff543d4675a20d0b591e0d61eefc25ccda11496845a9526b7a"
+    },
+    {
+      "path": "src/pokemon_red/release_data/grind_zones.json",
+      "bytes": 41452,
+      "sha256": "079db2063add72439cc8fb825f2a2ec2a30122095d7b62a02be3439a8d04f2fc"
+    },
+    {
+      "path": "src/pokemon_red/release_data/heal_locations.json",
+      "bytes": 3285,
+      "sha256": "ff36d41ae8666b8e8d224cc010515d67a258937d16261388defd3dcc982f23ec"
+    },
+    {
+      "path": "src/pokemon_red/release_data/item_articles.json",
+      "bytes": 149392,
+      "sha256": "3f1097b5a31ebafc1682da937339f73c1ea5368098574f263aa233b06a624d6a"
+    },
+    {
+      "path": "src/pokemon_red/release_data/location_reference.json",
+      "bytes": 968434,
+      "sha256": "2de7100a8a289061a2cdf8686113c66931c2f7f93d9f60c5ce6b0815a0d273f4"
+    },
+    {
+      "path": "src/pokemon_red/release_data/map_groups.json",
+      "bytes": 13291,
+      "sha256": "28529630ad2f1516eb60d486959121ab22c57f4c43526c920d4410b8e6b03451"
+    },
+    {
+      "path": "src/pokemon_red/release_data/move_articles.json",
+      "bytes": 214236,
+      "sha256": "9e098866bf375b036d8064ee02284716be634355132afe5e6e77f9ddb767878d"
+    },
+    {
+      "path": "src/pokemon_red/release_data/pokefirered_rev1.sym",
+      "bytes": 2019401,
+      "sha256": "6a885040b5cac0882ccbd1df0b08c37be8c76b27d00be16b3927df2ba815aa47"
+    },
+    {
+      "path": "src/pokemon_red/release_data/region_map.json",
+      "bytes": 45804,
+      "sha256": "45d8ab9221a9dfce993cd13a4c4757a5773848785280a7b154791041f31c408d"
+    },
+    {
+      "path": "src/pokemon_red/release_data/world_topology.json",
+      "bytes": 436982,
+      "sha256": "cbc7a1218bb3bb8bc6b6680f998de16ef5b13d354ed6abb6891cdd8a0b264035"
+    },
+    {
       "path": "src/pokemon_red/rom_catalog.py",
       "bytes": 4254,
       "sha256": "a31b48788dfe718aee2626656d4c6e58dfe038bb49d35907027a368226207a9e"
+    },
+    {
+      "path": "src/pokemon_red/rom_resources.py",
+      "bytes": 21965,
+      "sha256": "8c97c713c4d317b3485d72dc39c08564fb9ef9258789522ad306c42bee378dab"
     },
     {
       "path": "src/pokemon_red/route_profiles.py",
@@ -1043,8 +1138,8 @@
     },
     {
       "path": "src/pokemon_red/startup.py",
-      "bytes": 23665,
-      "sha256": "2e39085fdf44cb64c8a4b14e198f8d0746e46f9a8d387d75533007bd464e1d97"
+      "bytes": 24877,
+      "sha256": "41624ba9e0a98c5fdb5a8e0849152352940197c9cb7d442db7e4d1376ff82dab"
     },
     {
       "path": "src/pokemon_red/stat_values_ui.py",
@@ -1223,8 +1318,8 @@
     },
     {
       "path": "src/pokemon_red/zones.py",
-      "bytes": 522,
-      "sha256": "f765df1e33714eb8c47506bb32c17a9aaa568647496addcd2f34cadb566e8821"
+      "bytes": 767,
+      "sha256": "fc5bf91202661514f70b73b4cd1f6d18d53cb9db9a53b5b01163a4cf65c9ce7c"
     },
     {
       "path": "tests/public/__init__.py",
@@ -1235,6 +1330,11 @@
       "path": "tests/public/test_analytics_service.py",
       "bytes": 5176,
       "sha256": "55e3396319e7faf0abe34db087f96a12dfab979146755288caee386cd6999378"
+    },
+    {
+      "path": "tests/public/test_desktop_install.py",
+      "bytes": 10565,
+      "sha256": "805b35b51c2beea1deda3e9e30cde7e8d84f13df87ef9bb4c776c47cef348fab"
     },
     {
       "path": "tests/public/test_healing_state.py",
@@ -1772,6 +1872,11 @@
       "sha256": "8ca353312d4d5ca058283276b7052513aaa1482ccae7e50e657a04d268a792d5"
     },
     {
+      "path": "tools/build_macos.py",
+      "bytes": 10189,
+      "sha256": "569dda23f9fe0b215bcc5a10550298a20b2beb426e37a6059524458c34129b69"
+    },
+    {
       "path": "tools/build_reference.py",
       "bytes": 851,
       "sha256": "9aaabf9494588dd21f56c48e79d9f61b29249b2369826680f699cb770b7236ee"
@@ -1787,9 +1892,19 @@
       "sha256": "95f64e62754a00381a140e1f516ea2fa40e5a335d238b10850dd710a493f0013"
     },
     {
+      "path": "tools/check_macos_release.py",
+      "bytes": 8657,
+      "sha256": "b2e62a4c95b4f78c0c1839e66363554803ff3350ca1586e70f23d5f781412b3d"
+    },
+    {
       "path": "tools/export_source.py",
-      "bytes": 12981,
-      "sha256": "2f84713057b0cc2f29d359cca32414c2cb21b37f3a2232080e9e6d305625e6bb"
+      "bytes": 13010,
+      "sha256": "7a9df21e7289598dee202f6e8d846d453813e111a33fb50991e19925eca49f1e"
+    },
+    {
+      "path": "tools/prepare_macos_dependencies.py",
+      "bytes": 6020,
+      "sha256": "3e80f8907fdf6ffed88c3e2c33e744cfea8fa6539822f2ab21676b4508a8ed87"
     },
     {
       "path": "tools/public_checks.py",
@@ -1823,8 +1938,8 @@
     },
     {
       "path": "tools/source_export_manifest.json",
-      "bytes": 1520,
-      "sha256": "422fbe29bf24784ff749ddde32a870c2128a608aa2f7695e0626d9b069e3fe66"
+      "bytes": 2405,
+      "sha256": "9ea14c6ad8f612f5316686cc00857ee27c1627a879526e2a42e85ec8483b2a08"
     }
   ]
 }

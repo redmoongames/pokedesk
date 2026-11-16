@@ -43,6 +43,15 @@ def edition(root):
 
 def rom_sha1(root):return edition(root).sha1
 
+def selectable_editions(root):
+    """A packaged release advertises only fully prepared edition compilers."""
+    marker=resource(root,'native/distribution.json')
+    if not marker.is_file():return tuple(EDITIONS)
+    data=json.loads(marker.read_text())
+    games=data.get('games',[])
+    if not games or any(game not in EDITIONS for game in games):raise ValueError('Invalid distribution capabilities')
+    return tuple(games)
+
 def reference_path(root,name):
     return reference_for(installation_root(root),edition(root),name)
 
@@ -66,6 +75,7 @@ def validate_rom(raw,game):
     return game
 
 def available(library,game):
+    if game not in selectable_editions(library):return False
     path=rom_path(library,game)
     if not path.is_file():return False
     # Imported ROMs are hash-checked when installed and again at engine startup.
@@ -73,10 +83,14 @@ def available(library,game):
 
 def install_rom(library,path,game):
     """Only a local file; never changes ROM/save files of existing profiles."""
-    library=Path(library);raw=Path(path).read_bytes();spec=validate_rom(raw,game)
+    library=Path(library)
+    if game not in selectable_editions(library):raise ValueError('This release supports FireRed Rev 1 only')
+    raw=Path(path).read_bytes();spec=validate_rom(raw,game)
     target=rom_path(library,game)
     if game=='firered':
-        if not target.exists():raise ValueError('Базовый ROM FireRed отсутствует')
+        if not target.exists():
+            atomic_bytes(target,raw,durable=True)
+            return target
         if target.read_bytes()!=raw:raise ValueError('Замена ROM основной игры не поддерживается')
         return target
     # Ordinary ROM import changes user data only. Reference preparation belongs

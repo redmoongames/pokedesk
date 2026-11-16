@@ -1,31 +1,39 @@
-# Third-party components and resource boundaries
+# Distribution notices and resource boundaries
 
-Apache 2.0 applies to original PokéDesk code, not to every file in an existing
-private installation. Existing third-party notices must be preserved. The clean
-source export contains the application and native adapter sources, plus the
-license texts listed below; it does not redistribute the referenced binaries,
-ROMs, symbol packs, game data, sprites or Python runtime.
+Apache 2.0 covers original PokéDesk code. It does not relicense third-party
+components, game data, artwork or trademarks. The source repository and Mac
+application contain no Pokémon cartridge, prepared state or personal save.
 
-| Component in the private installation | Provenance | License / distribution status |
-| --- | --- | --- |
-| mGBA | commit `7a12d6d4b9acb14c0ae62c9166b6a2f3d08007f6`, https://github.com/mgba-emu/mgba | MPL 2.0, preserved in `licenses/mgba-MPL-2.0.txt`; binaries and corresponding source archive are excluded from this source export |
-| Symbol references from pokebot-gen3 | https://github.com/40Cakes/pokebot-gen3 | GPL 3.0 text preserved in `licenses/pokebot-GPL-3.0.txt`; symbol files are excluded, not relicensed as Apache |
-| PokéAPI reference material | https://github.com/PokeAPI/pokeapi | Existing notice preserved in `licenses/pokeapi.txt`; datasets are excluded pending resource-pack review |
-| Pokémon sprites | https://github.com/PokeAPI/sprites | Excluded; upstream hosting is not a blanket license for underlying game artwork |
-| ROM-derived tables, game headers and prepared states | Local ROMs / pret references | Excluded; no distribution clearance is asserted |
-| Python, Tcl/Tk and binary runtime dependencies | Existing bundled runtime | Excluded; a future binary release must ship its dependency notices and source obligations |
+| Component | Provenance and license |
+| --- | --- |
+| mGBA core | Official Libretro arm64 core, mGBA commit `7a12d6d4b9acb14c0ae62c9166b6a2f3d08007f6`; MPL 2.0, text in `licenses/mgba-MPL-2.0.txt` |
+| Native lockstep adapter | Original bridge plus the mGBA lockstep implementation compiled with two documented patches in `native/build.py`; mGBA-covered files retain MPL 2.0 |
+| Symbol-reference seed | Modified symbol records from 40Cakes/pokebot-gen3 commit `4bcbfa7c4018518cd4f9cb5d6c8e67691844caf2`; GPL 3.0, text in `licenses/pokebot-GPL-3.0.txt` |
+| PokéAPI references | Move identifiers/slugs and research provenance from `8a92bfa7dab2f12b84b5d151562f9857c133ff30`; upstream notice in `licenses/pokeapi.txt` |
+| Python and Tcl/Tk | CPython 3.12.16, python-build-standalone 20261026; runtime and dependency license texts plus `PYTHON.json` ship in the app's `Contents/Resources/licenses/` |
+| Setup/navigation metadata | Functional identifiers, factual event anchors, directed links and authored policies; provenance in `src/pokemon_red/release_data/PROVENANCE.txt` |
+| Local game content | Catalog tables, encounter slots, trainer names/parties and sprites are extracted on the user's Mac from their verified ROM; they are not application build inputs |
 
-`native/build.py` currently builds the adapter against a previously prepared
-`native/mgba_libretro.dylib`. It does **not** provide a full source-only build of
-the mGBA core or the Python runtime. The local mGBA source archive and its patches
-remain available in the private installation. A public playable release needs a
-complete dependency build recipe, ABI/version checks and resource provenance
-review before it is advertised as reproducible.
+The release provides the corresponding mGBA source archive and the complete
+PokéDesk source containing adapter patches. Prebuilt cinema/test cartridges and
+captures are omitted from that source archive; the core source is retained.
+Third-party mGBA dependency notices are included in the app/dependency archive.
+The core's pinned prebuilt ABI is checked; an arbitrary installed mGBA executable
+is not treated as an interchangeable dependency.
 
-Game ROMs and playthroughs must be supplied and managed locally. No permission to
-redistribute game content or trademarks is granted by the Apache license.
+The GPL symbol seed is provided as readable source, separately attributed, with
+its license. It is not relabeled as original Apache code. See the provenance file
+for its upstream URL, hash and the formatting/local-label changes.
 
-The three PNG files under docs/screenshots show actual interface windows from a
-disposable demo profile. They are documentation images, not a sprite/resource
-pack. Game artwork visible in them remains the property of its respective
-rights holders and is outside the Apache license for original application code.
+No externally downloaded sprite pack, game dialogue, event bytecode, map graphics,
+block layouts, ROM-derived catalog pack or donor save is bundled. The source seed
+contains declarative functional/factual metadata and authored explanations. This
+notice grants no rights to redistribute generated game content or trademarks.
+
+The four PNG files under `docs/screenshots/` document real disposable game/UI
+sessions. They are a narrow documentation-image exception to source export rules,
+not a game resource pack. Game artwork visible in them belongs to its respective
+rights holders and is outside the license for original PokéDesk code.
+
+PokéDesk is independent and unaffiliated with Nintendo, Game Freak or The Pokémon
+Company. Pokémon names and trademarks remain those of their respective owners.

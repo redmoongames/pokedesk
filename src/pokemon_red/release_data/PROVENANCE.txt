@@ -1,0 +1,24 @@
+PokéDesk release seed: no cartridges, saves, game artwork or dialogue.
+
+The .sym file is a compact, modified representation of the GPL-3.0 symbol
+reference from 40Cakes/pokebot-gen3 (only symbol records; sizes set to zero;
+assembler-local labels omitted). Original commit:
+4bcbfa7c4018518cd4f9cb5d6c8e67691844caf2
+https://github.com/40Cakes/pokebot-gen3/blob/4bcbfa7c4018518cd4f9cb5d6c8e67691844caf2/modules/data/symbols/pokefirered_rev1.sym
+Original source SHA-256: 7db782bdea7ac2607300caa4cd769feb9fe71f618c36ca736c750c704561b81a
+Its GPL-3.0 license is preserved in licenses/pokebot-GPL-3.0.txt.
+
+Map identifiers, event anchors, directed connections, field-effect identifiers
+and region positions are functional/factual metadata cross-checked against
+pret/pokefirered ce6406d8c2eaf46d543c8a2606de0c3cb1951982. No event bytecode,
+dialogue, map graphics, block layouts or trainer parties are distributed.
+https://github.com/pret/pokefirered/tree/ce6406d8c2eaf46d543c8a2606de0c3cb1951982
+
+Navigation policies and move/item explanations are authored PokéDesk material.
+Move article slugs/provenance reference PokéAPI
+8a92bfa7dab2f12b84b5d151562f9857c133ff30; its notice is in licenses/pokeapi.txt.
+Pokémon names/trademarks remain those of their respective rights holders.
+
+ROM catalogs, encounter tables, trainer names/parties and front/item sprites
+are generated locally from the user's verified cartridge by rom_resources.py.
+Generated resources and profiles are never inputs to the public bundle builder.
