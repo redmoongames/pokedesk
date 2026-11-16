@@ -9,7 +9,7 @@ has not been notarized by Apple.
 
 - **86 public ROM-free contracts** and source/package export checks pass. CI runs these
   on macOS/Linux with Python 3.12/3.13; CI success is not a game-integration pass.
-- The full existing integration suite passed: **1,117 tests**, 280.613 seconds,
+- The full existing integration suite passed: **1,123 tests**, 273.548 seconds,
   in a disposable installation with the locally required multi-edition fixtures.
 - First-run generation was compared to the working reference: species, moves,
   abilities, XP curves, types, effectiveness and item names matched exactly.
